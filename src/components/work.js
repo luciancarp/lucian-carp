@@ -17,7 +17,7 @@ const Work = () => {
 
   const projectList = data.allContentfulProject.edges.map(edge => (
     <li>
-      <h2>{edge.node.title}</h2>
+      <h3>{edge.node.title}</h3>
       <p>{edge.node.description}</p>
     </li>
   ))
@@ -25,7 +25,7 @@ const Work = () => {
   return (
     <div>
       <h1>Work</h1>
-      <ol>{projectList}</ol>
+      <ul>{projectList}</ul>
     </div>
   )
 }

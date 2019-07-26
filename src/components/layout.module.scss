@@ -1,10 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Arvo:400i&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:900&display=swap');
+@import '../styles/global';
 
 body,
 html,
 #root {
-  font-family: 'Arvo', serif;
+  font-family: $font-body;
+  color: $text-color;
+  background-color: $background-color;
+  font-size: $font-size-regular;
 }
 
 h1,
@@ -13,7 +17,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font-header;
   text-transform: uppercase;
 }
 
