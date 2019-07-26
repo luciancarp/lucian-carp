@@ -1,11 +1,5 @@
-@font-face {
-  font-family: 'Big-John';
-  src: url('/fonts/big-john.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 @import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900&display=swap');
 
 body,
 html,
@@ -19,7 +13,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Big-John', serif;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
 }
 
 .container {
