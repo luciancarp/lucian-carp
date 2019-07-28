@@ -2,5 +2,14 @@
 
 .container {
   min-height: 60vh;
-  padding-top: $wide-space;
+  margin: 0;
+}
+
+.text {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10vh;
+  z-index: 0;
+  margin-top: $wide-space;
+  margin-bottom: 0;
 }

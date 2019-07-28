@@ -4,8 +4,8 @@ import aboutStyles from './about.module.scss'
 
 const About = () => {
   return (
-    <section className={aboutStyles.container} id={'main'}>
-      <p>
+    <section className={aboutStyles.container}>
+      <p className={aboutStyles.text}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
         pharetra sagittis venenatis. Quisque tincidunt cursus est et hendrerit.
         Cras diam est, sagittis non placerat ut, consectetur in lorem. Duis id

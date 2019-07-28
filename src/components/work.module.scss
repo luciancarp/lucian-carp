@@ -1,0 +1,22 @@
+@import '../styles/global';
+
+.container {
+  margin-top: 10vh;
+  padding-top: $regular-space;
+  min-height: 100vh;
+}
+
+.workList {
+  list-style-type: none;
+  margin: 0;
+}
+
+.workItem {
+  padding-top: $wide-space;
+  padding-bottom: $wide-space;
+
+  a {
+    text-decoration: none;
+    color: $primary-color;
+  }
+}
