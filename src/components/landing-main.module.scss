@@ -1,0 +1,28 @@
+@import '../styles/global';
+
+.container {
+  min-height: 100vh;
+  padding-top: 10vh;
+}
+
+.header {
+  h1 {
+    display: inline-block;
+    color: $primary-color;
+    border-bottom: 0.15rem solid $text-color;
+
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-bottom: 1rem;
+
+    @media (min-width: $mobile-l-size) {
+      font-size: $font-size-x-large;
+      line-height: 4rem;
+    }
+
+    @media (min-width: $laptop-size) {
+      font-size: 4rem;
+      line-height: 5rem;
+    }
+  }
+}

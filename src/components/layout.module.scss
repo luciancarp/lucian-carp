@@ -22,12 +22,18 @@ h6 {
   font-family: $font-header;
   text-transform: uppercase;
   font-style: normal;
+  letter-spacing: 0.1rem;
+}
+
+h1 {
+  letter-spacing: 0.2rem;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 750px;
+  max-width: 1024px;
   padding: 1rem;
+  padding-top: 0;
 
   display: flex;
   flex-direction: column;
@@ -36,4 +42,5 @@ h6 {
 
 .content {
   flex-grow: 1;
+  max-width: 600px;
 }
