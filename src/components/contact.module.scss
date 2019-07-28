@@ -1,7 +1,11 @@
 @import '../styles/global.scss';
 
 .container {
-  margin-top: 10vh;
-  padding-top: $narrow-space;
+  // margin-top: 30vh;
+  // padding-top: $narrow-space;
   min-height: 80vh;
+  margin-top: 10vh;
+  h1 {
+    padding-top: 10vh;
+  }
 }

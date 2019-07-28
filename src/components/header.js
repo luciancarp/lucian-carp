@@ -11,6 +11,7 @@ const Header = () => (
         items={['main', 'work', 'contact']}
         currentClassName={headerStyles.isCurrent}
         className={headerStyles.navList}
+        offset={-20}
       >
         <li className={headerStyles.navItem}>
           <Link
