@@ -1,0 +1,40 @@
+@import '../styles/global';
+
+.container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  background-color: $background-color;
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+}
+
+.navMenu {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.navList {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+}
+
+.navItem {
+  margin-top: auto;
+  margin-bottom: auto;
+
+  h2 {
+    margin: 0;
+    margin-right: 1rem;
+    display: inline-block;
+    // color: $primary-color;
+    border-bottom: 0.15rem solid $text-color;
+    line-height: 2.5rem;
+  }
+}
