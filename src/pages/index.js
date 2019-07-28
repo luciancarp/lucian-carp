@@ -18,7 +18,7 @@ const IndexPage = () => (
     <Header />
     <About />
     <Work />
-    <Fade>
+    <Fade bottom>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis
         ex tortor. Duis ex nisl, molestie at consequat nec, tincidunt ut turpis.
@@ -30,7 +30,7 @@ const IndexPage = () => (
         turpis condimentum bibendum. Maecenas quis felis metus.
       </p>
     </Fade>
-    <Fade>
+    <Fade bottom>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis
         ex tortor. Duis ex nisl, molestie at consequat nec, tincidunt ut turpis.
@@ -42,7 +42,7 @@ const IndexPage = () => (
         turpis condimentum bibendum. Maecenas quis felis metus.
       </p>
     </Fade>
-    <Fade>
+    <Fade bottom>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis
         ex tortor. Duis ex nisl, molestie at consequat nec, tincidunt ut turpis.
@@ -54,7 +54,7 @@ const IndexPage = () => (
         turpis condimentum bibendum. Maecenas quis felis metus.
       </p>
     </Fade>
-    <Fade>
+    <Fade bottom>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis
         ex tortor. Duis ex nisl, molestie at consequat nec, tincidunt ut turpis.
@@ -66,7 +66,7 @@ const IndexPage = () => (
         turpis condimentum bibendum. Maecenas quis felis metus.
       </p>
     </Fade>
-    <Fade>
+    <Fade bottom>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis
         ex tortor. Duis ex nisl, molestie at consequat nec, tincidunt ut turpis.

@@ -1,12 +1,17 @@
 import React from 'react'
 import { Link } from 'react-scroll'
+import Scrollspy from 'react-scrollspy'
 
 import headerStyles from './header.module.scss'
 
 const Header = () => (
   <header className={headerStyles.container}>
     <nav className={headerStyles.navMenu}>
-      <ul className={headerStyles.navList}>
+      <Scrollspy
+        items={['main', 'work', 'contact']}
+        currentClassName={headerStyles.isCurrent}
+        className={headerStyles.navList}
+      >
         <li className={headerStyles.navItem}>
           <Link
             activeClass="active"
@@ -43,7 +48,7 @@ const Header = () => (
             <h2>Contact</h2>
           </Link>
         </li>
-      </ul>
+      </Scrollspy>
     </nav>
   </header>
 )

@@ -29,6 +29,15 @@
 .navItem {
   margin-top: auto;
   margin-bottom: auto;
+  cursor: pointer;
+
+  transition: color 0.2s;
+  -webkit-transition: color 0.2s; /* Safari */
+  transition-timing-function: ease-out;
+
+  &:hover {
+    color: $primary-color;
+  }
 
   h2 {
     margin: 0;
@@ -44,4 +53,8 @@
       line-height: 2.5rem;
     }
   }
+}
+
+.isCurrent {
+  color: $primary-color;
 }

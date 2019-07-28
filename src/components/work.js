@@ -18,7 +18,7 @@ const Work = () => {
 
   const projectList = data.allContentfulProject.edges.map(edge => (
     <li>
-      <Fade>
+      <Fade bottom>
         <h3>{edge.node.title}</h3>
         <p>{edge.node.description}</p>
       </Fade>
