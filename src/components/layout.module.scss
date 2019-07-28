@@ -9,6 +9,8 @@ html,
   color: $text-color;
   background-color: $background-color;
   font-size: $font-size-regular;
+  font-weight: 400;
+  font-style: italic;
 }
 
 h1,
@@ -19,6 +21,7 @@ h5,
 h6 {
   font-family: $font-header;
   text-transform: uppercase;
+  font-style: normal;
 }
 
 .container {
