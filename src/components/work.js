@@ -1,4 +1,5 @@
 import React from 'react'
+import Fade from 'react-reveal/Fade'
 import { useStaticQuery, graphql } from 'gatsby'
 
 const Work = () => {
@@ -17,16 +18,17 @@ const Work = () => {
 
   const projectList = data.allContentfulProject.edges.map(edge => (
     <li>
-      <h3>{edge.node.title}</h3>
-      <p>{edge.node.description}</p>
+      <Fade bottom>
+        <h3>{edge.node.title}</h3>
+        <p>{edge.node.description}</p>
+      </Fade>
     </li>
   ))
 
   return (
-    <div>
-      <h1>Work</h1>
+    <section>
       <ul>{projectList}</ul>
-    </div>
+    </section>
   )
 }
 
