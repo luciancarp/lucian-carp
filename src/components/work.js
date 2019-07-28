@@ -26,7 +26,7 @@ const Work = () => {
   ))
 
   return (
-    <section>
+    <section id={'work'}>
       <ul>{projectList}</ul>
     </section>
   )

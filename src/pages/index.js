@@ -5,6 +5,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Work from '../components/work'
 import Header from '../components/header'
+import Contact from '../components/contact'
 
 // import indexStyles from './index.module.scss'
 import LandingMain from '../components/landing-main'
@@ -77,6 +78,7 @@ const IndexPage = () => (
         turpis condimentum bibendum. Maecenas quis felis metus.
       </p>
     </Fade>
+    <Contact />
   </Layout>
 )
 
