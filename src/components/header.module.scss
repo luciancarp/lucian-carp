@@ -35,8 +35,14 @@
   -webkit-transition: color 0.2s; /* Safari */
   transition-timing-function: ease-out;
 
-  &:hover {
-    color: $primary-color;
+  // &:hover {
+  //   color: $primary-color;
+  // }
+
+  @media (min-width: $laptop-size) {
+    &:hover {
+      color: $primary-color;
+    }
   }
 
   h2 {
