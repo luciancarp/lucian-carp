@@ -1,10 +1,11 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "lucian-carp-site",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "personal website",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Lucian Carp",
   "dependencies": {
+    "framer-motion": "^1.3.0",
     "gatsby": "^2.13.39",
     "gatsby-image": "^2.2.6",
     "gatsby-plugin-manifest": "^2.2.4",
@@ -20,7 +21,6 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
-    "react-reveal": "^1.2.2",
     "react-scroll": "^1.7.12",
     "react-scrollspy": "^3.4.0"
   },
