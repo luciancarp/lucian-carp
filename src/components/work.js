@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import workStyles from './work.module.scss'
 
 const Work = () => {
@@ -10,6 +10,7 @@ const Work = () => {
           node {
             title
             description
+            slug
           }
         }
       }
@@ -21,7 +22,7 @@ const Work = () => {
       <div>
         <h3>{edge.node.title}</h3>
         <p>{edge.node.description}</p>
-        <a href="https://www.gatsbyjs.org">Check it out.</a>
+        <Link to={`/${edge.node.slug}`}>Check it out.</Link>
       </div>
     </li>
   ))
