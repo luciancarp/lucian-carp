@@ -15,6 +15,8 @@ import Footer from './footer'
 // import { useStaticQuery, graphql } from 'gatsby'
 
 // import Header from './header'
+import { motion } from 'framer-motion'
+import { opacityVariants } from '../styles/variants'
 
 const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`
@@ -30,10 +32,16 @@ const Layout = ({ children }) => {
   return (
     <>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-      <div className={layoutStyles.container}>
+      <motion.div
+        className={layoutStyles.container}
+        initial="hidden"
+        animate="visible"
+        variants={opacityVariants}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
+      >
         <main className={layoutStyles.content}>{children}</main>
         <Footer />
-      </div>
+      </motion.div>
     </>
   )
 }

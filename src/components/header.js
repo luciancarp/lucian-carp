@@ -1,19 +1,11 @@
 import React from 'react'
 import { Link } from 'react-scroll'
-import { motion } from 'framer-motion'
-import { opacityVariants } from '../styles/variants'
 import Scrollspy from 'react-scrollspy'
 
 import headerStyles from './header.module.scss'
 
 const Header = () => (
-  <motion.header
-    className={headerStyles.container}
-    initial="hidden"
-    animate="visible"
-    variants={opacityVariants}
-    transition={{ duration: 0.4, ease: 'easeOut' }}
-  >
+  <header className={headerStyles.container}>
     <nav className={headerStyles.navMenu}>
       <Scrollspy
         items={['main', 'work', 'contact']}
@@ -59,7 +51,7 @@ const Header = () => (
         </li>
       </Scrollspy>
     </nav>
-  </motion.header>
+  </header>
 )
 
 export default Header
