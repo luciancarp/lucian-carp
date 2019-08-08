@@ -1,14 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
+import ThemeContext from '../components/theme'
 
-const Footer = ({ switchTheme }) => {
+const Footer = () => {
   return (
-    <Container>
-      © {new Date().getFullYear()}, Built with
-      {` `}
-      <a href="https://www.gatsbyjs.org">Gatsby</a>
-      <button onClick={switchTheme}>Switch Theme</button>
-    </Container>
+    <ThemeContext.Consumer>
+      {theme => (
+        <Container>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <button onClick={theme.switchTheme}>Switch Theme</button>
+        </Container>
+      )}
+    </ThemeContext.Consumer>
   )
 }
 

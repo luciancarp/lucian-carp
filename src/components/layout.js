@@ -1,15 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 import '../styles/reset.scss'
-import {
-  fontSizes,
-  colors,
-  fonts,
-  darkTheme,
-  lightTheme
-} from '../styles/global'
+import { fontSizes, fonts } from '../styles/global'
 import Footer from './footer'
 
 // import { useStaticQuery, graphql } from 'gatsby'
@@ -19,30 +13,28 @@ import { motion } from 'framer-motion'
 import { opacityVariants } from '../styles/variants'
 
 const Layout = ({ children }) => {
-  const [theme, setTheme] = useState(darkTheme)
+  // const [theme, setTheme] = useState(darkTheme)
 
-  function switchTheme() {
-    const newTheme = theme.name === 'light' ? darkTheme : lightTheme
-    setTheme(newTheme)
-  }
+  // function switchTheme() {
+  //   const newTheme = theme.name === 'light' ? darkTheme : lightTheme
+  //   setTheme(newTheme)
+  // }
 
   return (
-    <ThemeProvider theme={theme}>
-      <>
-        {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
+    <>
+      {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
 
-        <GlobalStyle theme={theme} />
-        <Container
-          initial="hidden"
-          animate="visible"
-          variants={opacityVariants}
-          transition={{ duration: 0.4, ease: 'easeOut' }}
-        >
-          <Content>{children}</Content>
-          <Footer switchTheme={() => switchTheme()} />
-        </Container>
-      </>
-    </ThemeProvider>
+      <GlobalStyle />
+      <Container
+        initial="hidden"
+        animate="visible"
+        variants={opacityVariants}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
+      >
+        <Content>{children}</Content>
+        <Footer />
+      </Container>
+    </>
   )
 }
 

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-scroll'
 import Scrollspy from 'react-scrollspy'
 
-import { screenSizes, darkTheme, lightTheme } from '../styles/global'
+import { screenSizes } from '../styles/global'
 
 const Header = () => (
   <Container>

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
-import { colors, spaces } from '../styles/global'
+import { spaces } from '../styles/global'
 
 const Work = () => {
   const data = useStaticQuery(graphql`
