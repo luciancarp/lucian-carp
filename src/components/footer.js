@@ -1,14 +1,18 @@
 import React from 'react'
-import footerStyles from './footer.module.scss'
+import styled from 'styled-components'
 
 const Footer = () => {
   return (
-    <footer className={footerStyles.container}>
+    <Container>
       © {new Date().getFullYear()}, Built with
       {` `}
       <a href="https://www.gatsbyjs.org">Gatsby</a>
-    </footer>
+    </Container>
   )
 }
+
+const Container = styled.footer`
+  min-height: 10vh;
+`
 
 export default Footer

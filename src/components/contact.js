@@ -1,11 +1,10 @@
 import React from 'react'
-import contactStyles from './contact.module.scss'
+import styled from 'styled-components'
 
 const Contact = () => {
   return (
-    <section id={'contact'} className={contactStyles.container}>
+    <Container id={'contact'}>
       <h1>Contact</h1>
-
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis
         ex tortor. Duis ex nisl, molestie at consequat nec, tincidunt ut turpis.
@@ -16,8 +15,16 @@ const Contact = () => {
         pellentesque dolor sit amet, elementum urna. Mauris facilisis ligula in
         turpis condimentum bibendum. Maecenas quis felis metus.
       </p>
-    </section>
+    </Container>
   )
 }
+
+const Container = styled.section`
+  min-height: 80vh;
+  margin-top: 10vh;
+  h1 {
+    padding-top: 5vh;
+  }
+`
 
 export default Contact
