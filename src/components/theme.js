@@ -19,6 +19,7 @@ const ThemeProvider = ({ children }) => {
     <ThemeStyled theme={theme}>
       <ThemeContext.Provider
         value={{
+          name: theme.name,
           switchTheme: switchTheme
         }}
       >

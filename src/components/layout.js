@@ -5,6 +5,7 @@ import styled, { createGlobalStyle } from 'styled-components'
 import '../styles/reset.scss'
 import { fontSizes, fonts } from '../styles/global'
 import Footer from './footer'
+import ThemeSwitcher from './theme-switcher'
 
 // import { useStaticQuery, graphql } from 'gatsby'
 
@@ -32,6 +33,7 @@ const Layout = ({ children }) => {
         transition={{ duration: 0.4, ease: 'easeOut' }}
       >
         <Content>{children}</Content>
+        <ThemeSwitcher />
         <Footer />
       </Container>
     </>
