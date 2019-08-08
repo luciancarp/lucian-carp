@@ -2,56 +2,65 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-scroll'
 import Scrollspy from 'react-scrollspy'
+import ThemeContext from '../components/theme'
 
 import { screenSizes } from '../styles/global'
+import Sun from '../assets/sun.svg'
 
 const Header = () => (
-  <Container>
-    <NavMenu>
-      <NavList
-        items={['main', 'work', 'contact']}
-        currentClassName="is-current"
-        offset={-20}
-      >
-        <NavItem>
-          <Link
-            activeClass="active"
-            to="main"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
+  <ThemeContext.Consumer>
+    {theme => (
+      <Container>
+        <NavMenu>
+          <NavList
+            items={['main', 'work', 'contact']}
+            currentClassName="is-current"
+            offset={-20}
           >
-            <h2>Main</h2>
-          </Link>
-        </NavItem>
-        <NavItem>
-          <Link
-            activeClass="active"
-            to="work"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >
-            <h2>Work</h2>
-          </Link>
-        </NavItem>
-        <NavItem>
-          <Link
-            activeClass="active"
-            to="contact"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >
-            <h2>Contact</h2>
-          </Link>
-        </NavItem>
-      </NavList>
-    </NavMenu>
-  </Container>
+            <NavItem>
+              <Link
+                activeClass="active"
+                to="main"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                <h2>Main</h2>
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link
+                activeClass="active"
+                to="work"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                <h2>Work</h2>
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link
+                activeClass="active"
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                <h2>Contact</h2>
+              </Link>
+            </NavItem>
+            <ThemeSwitcher onClick={theme.switchTheme}>
+              <StyledSun />
+            </ThemeSwitcher>
+          </NavList>
+        </NavMenu>
+      </Container>
+    )}
+  </ThemeContext.Consumer>
 )
 
 const Container = styled.header`
@@ -126,6 +135,21 @@ const NavItem = styled.li`
       font-size: 1.62671rem;
       line-height: 2.5rem;
     }
+  }
+`
+
+const ThemeSwitcher = styled.li`
+  margin: 0;
+  padding-top: 0.5rem;
+`
+
+const StyledSun = styled(Sun)`
+  height: 1.8rem;
+  width: 1.8rem;
+  fill: rgba(204, 204, 204, 0.25);
+
+  &:hover {
+    fill: rgba(204, 204, 204, 1);
   }
 `
 
