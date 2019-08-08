@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { colors, fontSizes, screenSizes } from '../styles/global'
+import { fontSizes, screenSizes } from '../styles/global'
 
 const LandingMain = () => {
   return (
@@ -18,8 +18,8 @@ const Container = styled.section`
 
 const MainTitle = styled.h1`
   display: inline-block;
-  color: ${colors.primary};
-  border-bottom: 0.15rem solid ${colors.text};
+  color: ${props => props.theme.primary};
+  border-bottom: 0.15rem solid ${props => props.theme.text};
 
   font-size: 2rem;
   line-height: 3rem;

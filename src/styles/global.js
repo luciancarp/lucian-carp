@@ -17,6 +17,22 @@ export const colors = {
   text: '#ccc'
 }
 
+export const darkTheme = {
+  name: 'dark',
+  primary: '#ff4500',
+  background: '#1a1a1a',
+  backgroundTransp: 'rgba(26, 26, 26, 0.5)',
+  text: '#ccc'
+}
+
+export const lightTheme = {
+  name: 'light',
+  primary: '#ff4500',
+  background: '#ccc',
+  backgroundTransp: 'rgba(204, 204, 204, 0.5)',
+  text: '#1a1a1a'
+}
+
 export const spaces = {
   narrow: '0.75rem',
   regular: '1rem',

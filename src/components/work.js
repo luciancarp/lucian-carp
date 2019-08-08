@@ -57,7 +57,7 @@ const WorkItem = styled.li`
 
   a {
     text-decoration: none;
-    color: ${colors.primary};
+    color: ${props => props.theme.primary};
   }
 `
 

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-scroll'
 import Scrollspy from 'react-scrollspy'
 
-import { colors, screenSizes } from '../styles/global'
+import { screenSizes, darkTheme, lightTheme } from '../styles/global'
 
 const Header = () => (
   <Container>
@@ -68,13 +68,17 @@ const Container = styled.header`
   margin-left: -1rem;
   margin-right: -1rem;
 
-  background-color: ${colors.background};
+  transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s;
+  transition-timing-function: ease-out;
+
+  background-color: ${props => props.theme.background};
   min-height: 10vh;
   display: flex;
   align-items: center;
 
   @supports (backdrop-filter: none) {
-    background-color: ${colors.backgroundTransp};
+    background-color: ${props => props.theme.backgroundTransp};
     backdrop-filter: blur(5px);
   }
 `
@@ -84,7 +88,7 @@ const NavMenu = styled.nav`
   margin-bottom: auto;
 
   .is-current {
-    color: ${colors.primary};
+    color: ${props => props.theme.primary};
   }
 `
 
@@ -105,7 +109,7 @@ const NavItem = styled.li`
 
   @media (min-width: ${screenSizes.laptop}) {
     &:hover {
-      color: ${colors.primary};
+      color: ${props => props.theme.primary};
     }
   }
 
@@ -115,7 +119,7 @@ const NavItem = styled.li`
     display: inline-block;
 
     font-size: 1.2rem;
-    border-bottom: 0.15rem solid ${colors.text};
+    border-bottom: 0.15rem solid ${props => props.theme.text};
     line-height: 2rem;
 
     @media (min-width: ${screenSizes.mobileL}) {

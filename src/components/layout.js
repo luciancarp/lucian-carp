@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import styled, { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 import '../styles/reset.scss'
-import { fontSizes, colors, fonts } from '../styles/global'
+import {
+  fontSizes,
+  colors,
+  fonts,
+  darkTheme,
+  lightTheme
+} from '../styles/global'
 import Footer from './footer'
 
 // import { useStaticQuery, graphql } from 'gatsby'
@@ -13,20 +19,30 @@ import { motion } from 'framer-motion'
 import { opacityVariants } from '../styles/variants'
 
 const Layout = ({ children }) => {
+  const [theme, setTheme] = useState(darkTheme)
+
+  function switchTheme() {
+    const newTheme = theme.name === 'light' ? darkTheme : lightTheme
+    setTheme(newTheme)
+  }
+
   return (
-    <>
-      {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-      <GlobalStyle />
-      <Container
-        initial="hidden"
-        animate="visible"
-        variants={opacityVariants}
-        transition={{ duration: 0.4, ease: 'easeOut' }}
-      >
-        <Content>{children}</Content>
-        <Footer />
-      </Container>
-    </>
+    <ThemeProvider theme={theme}>
+      <>
+        {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
+
+        <GlobalStyle theme={theme} />
+        <Container
+          initial="hidden"
+          animate="visible"
+          variants={opacityVariants}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+        >
+          <Content>{children}</Content>
+          <Footer switchTheme={() => switchTheme()} />
+        </Container>
+      </>
+    </ThemeProvider>
   )
 }
 
@@ -55,11 +71,15 @@ const GlobalStyle = createGlobalStyle`
   html,
   #root {
     font-family: ${fonts.body};
-    color: ${colors.text};
-    background-color: ${colors.background};
+    color:${props => props.theme.text};
+    background-color: ${props => props.theme.background};
     font-size: ${fontSizes.regular};
     font-weight: 400;
     font-style: italic;
+
+    transition: background-color 0.2s;
+    -webkit-transition: background-color 0.2s;
+    transition-timing-function: ease-out;
   }
 
   h1,
