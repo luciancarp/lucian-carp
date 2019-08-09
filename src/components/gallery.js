@@ -127,6 +127,16 @@ const StyledArrow = styled(Arrow)`
   height: 1.5rem;
   width: 1.5rem;
   margin: 0.5rem;
+`
+
+const Button = styled.div`
+  cursor: pointer;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   fill: ${props => props.theme.text};
 
   transition: fill 0.2s;
@@ -138,15 +148,6 @@ const StyledArrow = styled(Arrow)`
       fill: ${props => props.theme.primary};
     }
   }
-`
-
-const Button = styled.div`
-  cursor: pointer;
-  z-index: 2;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `
 
 const ButtonLeft = styled(Button)`
