@@ -5,12 +5,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { wrap } from '@popmotion/popcorn'
 import { screenSizes } from '../styles/global'
 import Arrow from '../assets/arrow.svg'
+import Img from 'gatsby-image'
 
-export const images = [
-  'https://d33wubrfki0l68.cloudfront.net/dd23708ebc4053551bb33e18b7174e73b6e1710b/dea24/static/images/wallpapers/shared-colors@2x.png',
-  'https://d33wubrfki0l68.cloudfront.net/49de349d12db851952c5556f3c637ca772745316/cfc56/static/images/wallpapers/bridge-02@2x.png',
-  'https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png'
-]
+// export const images = [
+//   'https://d33wubrfki0l68.cloudfront.net/dd23708ebc4053551bb33e18b7174e73b6e1710b/dea24/static/images/wallpapers/shared-colors@2x.png',
+//   'https://d33wubrfki0l68.cloudfront.net/49de349d12db851952c5556f3c637ca772745316/cfc56/static/images/wallpapers/bridge-02@2x.png',
+//   'https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png'
+// ]
 
 const variants = {
   enter: direction => ({
@@ -29,7 +30,7 @@ const variants = {
   })
 }
 
-export const Gallery = () => {
+export const Gallery = ({ images }) => {
   const [[page, direction], setPage] = useState([0, 0])
 
   const imageIndex = wrap(0, images.length, page)
@@ -44,7 +45,7 @@ export const Gallery = () => {
         <StyledImage
           onDrag={(event, info) => console.log(info.point.x, info.point.y)}
           key={page}
-          src={images[imageIndex]}
+          // src={images[imageIndex]}
           custom={direction}
           variants={variants}
           initial="enter"
@@ -66,20 +67,24 @@ export const Gallery = () => {
               paginate(-1)
             }
           }}
-        />
+        >
+          <StyledImg fluid={images[imageIndex].fluid} />
+        </StyledImage>
       </StyledAnimatePresence>
       <GalleryControls>
         <ButtonLeft onClick={() => paginate(-1)}>
           <StyledArrow />
         </ButtonLeft>
         {images.map(image => {
-          let index = images.findIndex(i => i === image)
+          let index = images.findIndex(i => i.fluid.src === image.fluid.src)
           return <Bullet displayed={imageIndex === index}>•</Bullet>
         })}
         <ButtonRight onClick={() => paginate(1)}>
           <StyledArrow />
         </ButtonRight>
       </GalleryControls>
+
+      <Img fluid={images[imageIndex].fluid} />
     </>
   )
 }
@@ -88,7 +93,7 @@ const StyledAnimatePresence = styled(AnimatePresence)`
   position: relative;
 `
 
-const StyledImage = styled(motion.img)`
+const StyledImg = styled(Img)`
   position: absolute;
 
   max-width: calc(100% - 2rem);
@@ -96,6 +101,18 @@ const StyledImage = styled(motion.img)`
   @media (min-width: 600px) {
     max-width: 600px;
   }
+`
+
+const StyledImage = styled(motion.div)`
+  position: absolute;
+  top: 0;
+  /* position: relative; */
+
+  /* max-width: calc(100% - 2rem);
+
+  @media (min-width: 600px) {
+    max-width: 600px;
+  } */
 `
 
 const GalleryControls = styled.div`
