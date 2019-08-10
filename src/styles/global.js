@@ -22,14 +22,14 @@ export const darkTheme = {
   primary: '#ff4500',
   background: '#1a1a1a',
   backgroundTransp: 'rgba(26, 26, 26, 0.5)',
-  text: '#ccc'
+  text: '#eee'
 }
 
 export const lightTheme = {
   name: 'light',
   primary: '#ff4500',
-  background: '#ccc',
-  backgroundTransp: 'rgba(204, 204, 204, 0.5)',
+  background: '#eee',
+  backgroundTransp: 'rgba(238, 238, 238, 0.5)',
   text: '#1a1a1a'
 }
 
