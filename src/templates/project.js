@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 import { Gallery } from '../components/gallery'
 
 // GatsbyContentfulFluid not working in graphiql or playground
@@ -12,7 +13,7 @@ export const query = graphql`
       description
       images {
         fluid(maxWidth: 600, quality: 80) {
-          ...GatsbyContentfulFluid
+          ...GatsbyContentfulFixed_withWebp
         }
       }
     }
@@ -22,6 +23,7 @@ export const query = graphql`
 const Project = props => {
   return (
     <Layout>
+      <SEO title={props.data.contentfulProject.title} />
       <ProjectContainer>
         <h1>{props.data.contentfulProject.title}</h1>
         <Gallery images={props.data.contentfulProject.images} />
