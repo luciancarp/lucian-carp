@@ -11,7 +11,7 @@ export const query = graphql`
       title
       description
       images {
-        fluid(maxWidth: 600) {
+        fluid(maxWidth: 600, quality: 80) {
           ...GatsbyContentfulFluid
         }
       }
