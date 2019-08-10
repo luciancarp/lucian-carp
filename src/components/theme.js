@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ThemeProvider as ThemeStyled } from 'styled-components'
 import { darkTheme, lightTheme } from '../styles/global'
 
@@ -10,9 +10,14 @@ const ThemeContext = React.createContext(defaultState)
 const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(darkTheme)
 
+  useEffect(() => {
+    if (localStorage.theme === 'light') setTheme(lightTheme)
+  }, [])
+
   const switchTheme = () => {
     const newTheme = theme.name === 'light' ? darkTheme : lightTheme
     setTheme(newTheme)
+    localStorage.setItem('theme', newTheme.name)
   }
 
   return (
