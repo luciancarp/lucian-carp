@@ -91,7 +91,7 @@ const LeftButton = styled.div`
 const Description = styled.p`
   padding: 0;
   margin: 0;
-  margin-top: 3rem;
+  margin-top: 2rem;
 `
 
 const ProjectContainer = styled.div`
