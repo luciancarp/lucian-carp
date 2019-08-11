@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Gallery } from '../components/gallery'
 import Left from '../assets/left.svg'
+import Stack from '../components/stack'
 
 // GatsbyContentfulFluid not working in graphiql or playground
 export const query = graphql`
@@ -18,6 +19,12 @@ export const query = graphql`
           ...GatsbyContentfulFluid_withWebp
         }
       }
+      stack {
+        title
+        fixed(height: 50, width: 50, quality: 90, resizingBehavior: PAD) {
+          ...GatsbyContentfulFixed_withWebp
+        }
+      }
     }
   }
 `
@@ -28,20 +35,14 @@ const Project = props => {
       <SEO title={props.data.contentfulProject.title} />
       <ProjectContainer>
         <Title>
-          {/* <Link to={`/`}> */}
           <LeftButton onClick={() => window.history.back()}>
             <StyledLeft />
           </LeftButton>
-          {/* </Link> */}
           <h1>{props.data.contentfulProject.title}</h1>
         </Title>
         <Gallery images={props.data.contentfulProject.images} />
-        <p>{props.data.contentfulProject.description}</p>
-        <p>{props.data.contentfulProject.description}</p>
-        <p>{props.data.contentfulProject.description}</p>
-        <p>{props.data.contentfulProject.description}</p>
-        <p>{props.data.contentfulProject.description}</p>
-        <p>{props.data.contentfulProject.description}</p>
+        <Description>{props.data.contentfulProject.description}</Description>
+        <Stack stack={props.data.contentfulProject.stack} />
       </ProjectContainer>
     </Layout>
   )
@@ -85,6 +86,12 @@ const LeftButton = styled.div`
       fill: ${props => props.theme.primary};
     }
   }
+`
+
+const Description = styled.p`
+  padding: 0;
+  margin: 0;
+  margin-top: 3rem;
 `
 
 const ProjectContainer = styled.div`
