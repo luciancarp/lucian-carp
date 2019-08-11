@@ -7,12 +7,13 @@ import { spaces } from '../styles/global'
 const Work = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulProject {
+      allContentfulProject(sort: { fields: [index], order: [ASC] }) {
         edges {
           node {
             title
             description
             slug
+            index
           }
         }
       }

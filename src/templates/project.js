@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { screenSizes } from '../styles/global'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -14,6 +15,9 @@ export const query = graphql`
     contentfulProject(slug: { eq: $slug }) {
       title
       description
+      body {
+        json
+      }
       images {
         fluid(maxWidth: 600, quality: 80) {
           ...GatsbyContentfulFluid_withWebp
@@ -30,6 +34,16 @@ export const query = graphql`
 `
 
 const Project = props => {
+  const options = {
+    renderNode: {
+      'embedded-asset-block': node => {
+        const alt = node.data.target.fields.title['en-US']
+        const url = node.data.target.fields.file['en-US'].url
+        return <img alt={alt} src={url} />
+      }
+    }
+  }
+
   return (
     <Layout>
       <SEO title={props.data.contentfulProject.title} />
@@ -41,7 +55,13 @@ const Project = props => {
           <h1>{props.data.contentfulProject.title}</h1>
         </Title>
         <Gallery images={props.data.contentfulProject.images} />
-        <Description>{props.data.contentfulProject.description}</Description>
+        {/* <Description>{props.data.contentfulProject.description}</Description> */}
+        <Text>
+          {documentToReactComponents(
+            props.data.contentfulProject.body.json,
+            options
+          )}
+        </Text>
         <Stack stack={props.data.contentfulProject.stack} />
       </ProjectContainer>
     </Layout>
@@ -88,7 +108,7 @@ const LeftButton = styled.div`
   }
 `
 
-const Description = styled.p`
+const Text = styled.p`
   padding: 0;
   margin: 0;
   margin-top: 2rem;
