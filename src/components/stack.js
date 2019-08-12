@@ -22,11 +22,13 @@ const StyledStack = styled.ul`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+  list-style-type: none;
 
   margin-left: 0;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 `
 
 const StyledItem = styled.li`
@@ -35,7 +37,8 @@ const StyledItem = styled.li`
   align-items: center;
   justify-content: center;
 
-  margin-left: ${props => (props.first ? '0' : '2rem')};
+  max-width: 100px;
+  margin: 1rem;
 `
 
 const StyledItemTitle = styled.h5`
