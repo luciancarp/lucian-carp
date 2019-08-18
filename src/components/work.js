@@ -13,6 +13,7 @@ const Work = () => {
             title
             description
             slug
+            date(formatString: "MMMM YYYY")
             index
           }
         }
@@ -24,8 +25,8 @@ const Work = () => {
     <WorkItem>
       <Link to={`/${edge.node.slug}`}>
         <h3>{edge.node.title}</h3>
+        <Date>{edge.node.date}</Date>
         <p>{edge.node.description}</p>
-        {/* <Link to={`/${edge.node.slug}`}>Check it out.</Link> */}
       </Link>
     </WorkItem>
   ))
@@ -89,6 +90,10 @@ const WorkItem = styled.li`
       }
     }
   }
+`
+
+const Date = styled.p`
+  margin-bottom: ${spaces.narrow};
 `
 
 export default Work

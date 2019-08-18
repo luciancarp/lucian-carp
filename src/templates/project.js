@@ -15,6 +15,7 @@ export const query = graphql`
     contentfulProject(slug: { eq: $slug }) {
       title
       description
+      date(formatString: "MMMM YYYY")
       body {
         json
       }
@@ -54,8 +55,8 @@ const Project = props => {
           </LeftButton>
           <h1>{props.data.contentfulProject.title}</h1>
         </Title>
+        <p>{props.data.contentfulProject.date}</p>
         <Gallery images={props.data.contentfulProject.images} />
-        {/* <Description>{props.data.contentfulProject.description}</Description> */}
         <Text>
           {documentToReactComponents(
             props.data.contentfulProject.body.json,
