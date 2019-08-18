@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-scroll'
 import Scrollspy from 'react-scrollspy'
 
-import { screenSizes } from '../styles/global'
+import { screenSizes, spaces } from '../styles/global'
 
 const Header = () => (
   <Container>
@@ -62,11 +62,11 @@ const Container = styled.header`
 
   padding-top: 1rem;
   padding-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: ${spaces.wide};
+  padding-right: ${spaces.wide};
 
-  margin-left: -1rem;
-  margin-right: -1rem;
+  margin-left: -${spaces.wide};
+  margin-right: -${spaces.wide};
 
   transition: background-color 0.2s;
   -webkit-transition: background-color 0.2s;
