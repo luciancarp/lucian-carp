@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
         initial="hidden"
         animate="visible"
         variants={opacityVariants}
-        transition={{ duration: 0.4, ease: 'easeOut' }}
+        transition={{ duration: 0.2, ease: 'easeOut' }}
       >
         <Content>{children}</Content>
         <ThemeSwitcher />

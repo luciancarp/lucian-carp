@@ -6,9 +6,8 @@ const Stack = ({ stack }) => {
   return (
     <StyledStack>
       {stack.map(item => {
-        let index = stack.findIndex(i => i.title === item.title)
         return (
-          <StyledItem first={index === 0}>
+          <StyledItem>
             <StyledImg fixed={item.fixed} />
             <StyledItemTitle>{item.title}</StyledItemTitle>
           </StyledItem>
