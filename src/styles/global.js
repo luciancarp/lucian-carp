@@ -22,6 +22,7 @@ export const darkTheme = {
   primary: '#ff4500',
   background: '#1a1a1a',
   backgroundTransp: 'rgba(26, 26, 26, 0.5)',
+  backgroundoppositeTransp: 'rgba(238, 238, 238, 0.1)',
   text: '#eee'
 }
 
@@ -30,6 +31,7 @@ export const lightTheme = {
   primary: '#ff4500',
   background: '#eee',
   backgroundTransp: 'rgba(238, 238, 238, 0.5)',
+  backgroundoppositeTransp: 'rgba(26, 26, 26, 0.1)',
   text: '#1a1a1a'
 }
 
