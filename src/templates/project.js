@@ -6,7 +6,7 @@ import { screenSizes } from '../styles/global'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Gallery } from '../components/gallery'
-import Left from '../assets/left.svg'
+import ArrowDrop from '../assets/arrow-drop.svg'
 import Stack from '../components/stack'
 
 // GatsbyContentfulFluid not working in graphiql or playground
@@ -51,7 +51,7 @@ const Project = props => {
       <ProjectContainer>
         <Title>
           <LeftButton onClick={() => window.history.back()}>
-            <StyledLeft />
+            <StyledArrowDrop />
           </LeftButton>
           <h1>{props.data.contentfulProject.title}</h1>
         </Title>
@@ -82,7 +82,7 @@ const Title = styled.div`
   margin-bottom: 1.5rem;
 `
 
-const StyledLeft = styled(Left)`
+const StyledArrowDrop = styled(ArrowDrop)`
   height: 1.5rem;
   width: 1.5rem;
   margin-right: 0.5rem;

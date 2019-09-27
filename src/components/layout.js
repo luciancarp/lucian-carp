@@ -14,13 +14,6 @@ import { motion } from 'framer-motion'
 import { opacityVariants } from '../styles/variants'
 
 const Layout = ({ children }) => {
-  // const [theme, setTheme] = useState(darkTheme)
-
-  // function switchTheme() {
-  //   const newTheme = theme.name === 'light' ? darkTheme : lightTheme
-  //   setTheme(newTheme)
-  // }
-
   return (
     <>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
