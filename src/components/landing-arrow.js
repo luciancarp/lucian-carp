@@ -42,7 +42,10 @@ const LandingArrow = () => (
 )
 
 const Container = styled(motion.div)`
-  padding-top: 10vh;
+  padding-top: 0;
+  @media (min-width: ${screenSizes.laptop}) {
+    padding-top: 10vh;
+  }
 
   display: flex;
   justify-content: center;
