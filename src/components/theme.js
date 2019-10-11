@@ -11,7 +11,14 @@ const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(lightTheme)
 
   useEffect(() => {
-    if (localStorage.theme === 'dark') setTheme(darkTheme)
+    const localTheme = localStorage.theme
+    if (
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches &&
+      !localTheme
+    )
+      setTheme(darkTheme)
+    else if (localTheme && localTheme === 'dark') setTheme(darkTheme)
   }, [])
 
   const switchTheme = () => {
