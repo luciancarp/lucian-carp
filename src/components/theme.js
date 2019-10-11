@@ -8,17 +8,17 @@ const defaultState = {
 const ThemeContext = React.createContext(defaultState)
 
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(lightTheme)
+  const [theme, setTheme] = useState(darkTheme)
 
   useEffect(() => {
     const localTheme = localStorage.theme
     if (
       window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches &&
+      window.matchMedia('(prefers-color-scheme: light)').matches &&
       !localTheme
     )
-      setTheme(darkTheme)
-    else if (localTheme && localTheme === 'dark') setTheme(darkTheme)
+      setTheme(lightTheme)
+    else if (localTheme && localTheme === 'light') setTheme(lightTheme)
   }, [])
 
   const switchTheme = () => {
