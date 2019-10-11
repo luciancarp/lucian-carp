@@ -19,6 +19,7 @@ const Layout = ({ children }) => {
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
 
       <GlobalStyle />
+      <ThemeSwitcher />
       <Container
         initial="hidden"
         animate="visible"
@@ -26,7 +27,6 @@ const Layout = ({ children }) => {
         transition={{ duration: 0.3, ease: 'easeOut' }}
       >
         <Content>{children}</Content>
-        <ThemeSwitcher />
         <Footer />
       </Container>
     </>
