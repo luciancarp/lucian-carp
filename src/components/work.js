@@ -80,6 +80,10 @@ const WorkItem = styled.li`
     transition: color 0.3s;
     -webkit-transition: color 0.3s;
     transition-timing-function: ease-out;
+
+    display: inline-block;
+    border-bottom: 0.15rem solid ${props => props.theme.text};
+    line-height: 2rem;
   }
 
   @media (min-width: ${screenSizes.laptop}) {
