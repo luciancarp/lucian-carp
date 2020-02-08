@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import ContactForm from './contact-form'
 
 const Contact = () => {
   return (
@@ -14,6 +15,7 @@ const Contact = () => {
         pellentesque dolor sit amet, elementum urna. Mauris facilisis ligula in
         turpis condimentum bibendum. Maecenas quis felis metus.
       </p>
+      <ContactForm />
     </Container>
   )
 }
