@@ -14,9 +14,9 @@ const opacityVariants = {
 const transition = {
   yoyo: Infinity,
   duration: 0.75,
-  ease: 'easeOut',
-  delay: 1.5,
-  repeatDelay: 0.5
+  ease: 'easeIn',
+  delay: 0.5,
+  repeatDelay: 0.25
 }
 
 const LandingArrow = () => (
