@@ -22,13 +22,13 @@ const Work = () => {
   `)
 
   const projectList = data.allContentfulProject.edges.map(edge => (
-    <WorkItem>
-      <Link to={`/${edge.node.slug}`}>
+    <StyledLink to={`/${edge.node.slug}`}>
+      <WorkItem>
         <h3>{edge.node.title}</h3>
         <Date>{edge.node.date}</Date>
         <p>{edge.node.description}</p>
-      </Link>
-    </WorkItem>
+      </WorkItem>
+    </StyledLink>
   ))
 
   return (
@@ -53,6 +53,21 @@ const WorkList = styled.ul`
   margin: 0;
 `
 
+const StyledLink = styled(Link)`
+  display: block;
+  text-decoration: none;
+
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
+
+  color: ${props => props.theme.text};
+`
+
 const WorkItem = styled.li`
   padding-top: ${spaces.wide};
   padding-bottom: ${spaces.wide};
@@ -63,13 +78,6 @@ const WorkItem = styled.li`
   margin-bottom: 0;
   margin-left: -${spaces.wide};
   margin-right: -${spaces.wide};
-
-  a {
-    text-decoration: none;
-    color: ${props => props.theme.text};
-  }
-
-  cursor: pointer;
 
   background-color: none;
   transition: background-color 0.3s;
