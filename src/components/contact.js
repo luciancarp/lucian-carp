@@ -4,7 +4,6 @@ import styled from 'styled-components'
 const Contact = () => {
   return (
     <Container id={'contact'}>
-      <h1>Contact</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis
         ex tortor. Duis ex nisl, molestie at consequat nec, tincidunt ut turpis.

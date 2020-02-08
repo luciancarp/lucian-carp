@@ -33,14 +33,13 @@ const Work = () => {
 
   return (
     <Container id={'work'}>
-      <h1>Work</h1>
       <WorkList>{projectList}</WorkList>
     </Container>
   )
 }
 
 const Container = styled.section`
-  margin-top: 10vh;
+  padding-top: 5vh;
   min-height: 100vh;
 
   h1 {
