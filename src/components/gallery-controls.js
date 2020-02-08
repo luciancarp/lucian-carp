@@ -34,7 +34,7 @@ const GalleryControlsContainer = styled.div`
     margin-top: 330px;
   }
   @media (min-width: 600px) {
-    margin-top: 360px;
+    margin-top: 370px;
     max-width: 600px;
   }
 

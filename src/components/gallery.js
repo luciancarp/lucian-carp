@@ -8,18 +8,21 @@ import GalleryControls from './gallery-controls'
 
 const variants = {
   enter: direction => ({
-    x: direction < 0 ? 300 : -300,
-    opacity: 0
+    x: direction > 0 ? 500 : -500,
+    opacity: 0,
+    scale: 0.75
   }),
   center: {
     zIndex: 1,
     x: 0,
-    opacity: 1
+    opacity: 1,
+    scale: 1
   },
   exit: direction => ({
     zIndex: 0,
-    x: direction < 0 ? 300 : -300,
-    opacity: 0
+    x: direction < 0 ? 500 : -500,
+    opacity: 0,
+    scale: 0.75
   })
 }
 
@@ -36,6 +39,7 @@ export const Gallery = ({ images }) => {
     <>
       <StyledAnimatePresence initial={false} custom={direction}>
         <AnimatedContainer
+          whileHover={{ scale: 1.05 }}
           key={page}
           custom={direction}
           variants={variants}
