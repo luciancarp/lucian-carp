@@ -26,7 +26,7 @@ const LandingArrow = () => (
     variants={opacityVariants}
     transition={transition}
   >
-    <Scrollspy items={['work']} currentClassName="is-current" offset={-20}>
+    <Scrollspy items={['work']} currentClassName="is-current" offset={250}>
       <StyledLink
         activeClass="active"
         to="work"

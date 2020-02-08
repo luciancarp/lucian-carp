@@ -62,7 +62,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${props => props.theme.background};
     font-size: ${fontSizes.regular};
     font-weight: 400;
-    font-style: italic;
+    font-style: normal;
 
     transition: background-color 0.2s;
     -webkit-transition: background-color 0.2s;
