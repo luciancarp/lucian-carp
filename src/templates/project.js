@@ -8,6 +8,7 @@ import SEO from '../components/seo'
 import { Gallery } from '../components/gallery'
 import ArrowDrop from '../assets/arrow-drop.svg'
 import Stack from '../components/stack'
+import ProjectLinks from '../components/project-links'
 
 // GatsbyContentfulFluid not working in graphiql or playground
 export const query = graphql`
@@ -29,6 +30,12 @@ export const query = graphql`
         fixed(height: 50, width: 50, quality: 90, resizingBehavior: PAD) {
           ...GatsbyContentfulFixed_withWebp
         }
+      }
+      links {
+        github
+        link
+        youtube
+        gitlab
       }
     }
   }
@@ -57,17 +64,37 @@ const Project = props => {
         </Title>
         <p>{props.data.contentfulProject.date}</p>
         <Gallery images={props.data.contentfulProject.images} />
+        <ProjectLinksContainer>
+          <ProjectLinks links={props.data.contentfulProject.links} />
+        </ProjectLinksContainer>
         <Text>
           {documentToReactComponents(
             props.data.contentfulProject.body.json,
             options
           )}
         </Text>
+        <StyledHr />
         <Stack stack={props.data.contentfulProject.stack} />
       </ProjectContainer>
     </Layout>
   )
 }
+
+const ProjectLinksContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`
+
+const StyledHr = styled.hr`
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  width: 70%;
+
+  background-color: ${props => props.theme.text};
+`
 
 const Title = styled.div`
   display: flex;

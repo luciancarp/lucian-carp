@@ -26,8 +26,6 @@ const StyledStack = styled.ul`
   list-style-type: none;
 
   margin-left: 0;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 `
 
 const StyledItem = styled.li`
