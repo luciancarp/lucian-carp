@@ -49,7 +49,7 @@ export default function ContactForm() {
   return (
     <div>
       <StyledForm
-        name="contact-recaptcha"
+        name="contact"
         method="post"
         action="/thanks/"
         data-netlify="true"
@@ -57,7 +57,8 @@ export default function ContactForm() {
         data-netlify-recaptcha="true"
         onSubmit={handleSubmit}
       >
-        <input type="hidden" name="form-name" value="contact-recaptcha" />
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="form-name" value="contact" />
         <noscript>
           <p>This form won’t work with Javascript disabled</p>
         </noscript>
