@@ -1,19 +1,7 @@
 import React from 'react'
 import { navigate } from 'gatsby'
-import Recaptcha from 'react-google-recaptcha'
 import styled from 'styled-components'
-import ThemeContext from './theme'
 import { screenSizes } from '../styles/global'
-
-const RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
-if (typeof RECAPTCHA_KEY === 'undefined') {
-  throw new Error(`
-  Env var SITE_RECAPTCHA_KEY is undefined! 
-  You probably forget to set it in your Netlify build environment variables. 
-  Make sure to get a Recaptcha key at https://www.netlify.com/docs/form-handling/#custom-recaptcha-2-with-your-own-settings
-  Note this demo is specifically for Recaptcha v2
-  `)
-}
 
 function encode(data) {
   return Object.keys(data)
@@ -23,7 +11,6 @@ function encode(data) {
 
 export default function ContactForm() {
   const [state, setState] = React.useState({})
-  const recaptchaRef = React.createRef()
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
@@ -32,13 +19,11 @@ export default function ContactForm() {
   const handleSubmit = e => {
     e.preventDefault()
     const form = e.target
-    const recaptchaValue = recaptchaRef.current.getValue()
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
         'form-name': form.getAttribute('name'),
-        'g-recaptcha-response': recaptchaValue,
         ...state
       })
     })
@@ -54,14 +39,20 @@ export default function ContactForm() {
         action="/thanks/"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        data-netlify-recaptcha="true"
         onSubmit={handleSubmit}
       >
-        <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="contact" />
+        <p hidden>
+          <label>
+            Don’t fill this out:{' '}
+            <input name="bot-field" onChange={handleChange} />
+          </label>
+        </p>
+
         <noscript>
           <p>This form won’t work with Javascript disabled</p>
         </noscript>
+
         <p>
           <label>
             Your name:
@@ -84,38 +75,29 @@ export default function ContactForm() {
           </label>
         </p>
 
-        <ThemeContext.Consumer>
-          {theme =>
-            theme.name === 'light' ? (
-              <Recaptcha
-                ref={recaptchaRef}
-                sitekey={RECAPTCHA_KEY}
-                theme="light"
-              />
-            ) : (
-              <Recaptcha
-                ref={recaptchaRef}
-                sitekey={RECAPTCHA_KEY}
-                theme="dark"
-              />
-            )
-          }
-        </ThemeContext.Consumer>
-
-        <p>
+        <StyledButtonContainer>
           <StyledButton type="submit">
-            <h2>Send</h2>
+            <h3>Send</h3>
           </StyledButton>
-        </p>
+        </StyledButtonContainer>
       </StyledForm>
     </div>
   )
 }
 
+const StyledButtonContainer = styled.p`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`
+
 const StyledButton = styled.button`
-  padding-top: 1rem;
   margin-top: auto;
   margin-bottom: auto;
+
+  padding: 0.3rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
 
   border: none;
   background: none;
@@ -133,13 +115,8 @@ const StyledButton = styled.button`
     }
   }
 
-  h2 {
+  h3 {
     display: inline-block;
-
-    @media (min-width: ${screenSizes.mobileL}) {
-      font-size: 1.62671rem;
-      line-height: 2.5rem;
-    }
   }
 `
 
