@@ -40,6 +40,7 @@ const StyledItem = styled.li`
 
 const StyledItemTitle = styled.h5`
   margin-top: 0.5rem;
+  text-align: center;
 `
 
 const StyledImg = styled(Img)``

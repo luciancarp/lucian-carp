@@ -5,16 +5,7 @@ import ContactForm from './contact-form'
 const Contact = () => {
   return (
     <Container id={'contact'}>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis
-        ex tortor. Duis ex nisl, molestie at consequat nec, tincidunt ut turpis.
-        Maecenas in placerat tortor, sed pulvinar orci. Etiam eu dui magna.
-        Nulla felis eros, rhoncus id dictum commodo, fringilla ut sem. Cras
-        imperdiet eget justo quis interdum. Sed tortor tellus, scelerisque eget
-        placerat in, ultricies a nulla. Morbi sit amet velit convallis,
-        pellentesque dolor sit amet, elementum urna. Mauris facilisis ligula in
-        turpis condimentum bibendum. Maecenas quis felis metus.
-      </p>
+      <h3>Get in touch!</h3>
       <ContactForm />
     </Container>
   )

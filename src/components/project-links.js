@@ -10,22 +10,22 @@ const ProjectLinks = ({ links }) => {
   return (
     <StyledLinks>
       {links.github !== '' && (
-        <Styleda href={links.github}>
+        <Styleda target="_blank" rel="noopener noreferrer" href={links.github}>
           <Github />
         </Styleda>
       )}
       {links.gitlab !== '' && (
-        <Styleda href={links.gitlab}>
+        <Styleda target="_blank" rel="noopener noreferrer" href={links.gitlab}>
           <Gitlab />
         </Styleda>
       )}
       {links.youtube !== '' && (
-        <Styleda href={links.youtube}>
+        <Styleda target="_blank" rel="noopener noreferrer" href={links.youtube}>
           <Youtube />
         </Styleda>
       )}
       {links.link !== '' && (
-        <Styleda href={links.link}>
+        <Styleda target="_blank" rel="noopener noreferrer" href={links.link}>
           <ExternalLink />
         </Styleda>
       )}
