@@ -55,21 +55,24 @@ export default function ContactForm() {
 
         <p>
           <label>
-            Your name:
+            Your name
+            <br />
             <br />
             <input type="text" name="name" onChange={handleChange} />
           </label>
         </p>
         <p>
           <label>
-            Your email:
+            Your email
+            <br />
             <br />
             <input type="email" name="email" onChange={handleChange} />
           </label>
         </p>
         <p>
           <label>
-            Message:
+            Message
+            <br />
             <br />
             <textarea name="message" onChange={handleChange} />
           </label>

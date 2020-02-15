@@ -9,6 +9,7 @@ import { Gallery } from '../components/gallery'
 import ArrowDrop from '../assets/arrow-drop.svg'
 import Stack from '../components/stack'
 import ProjectLinks from '../components/project-links'
+import Hr from '../components/Hr'
 
 // GatsbyContentfulFluid not working in graphiql or playground
 export const query = graphql`
@@ -73,7 +74,7 @@ const Project = props => {
             options
           )}
         </Text>
-        <StyledHr />
+        <Hr />
         <Stack stack={props.data.contentfulProject.stack} />
       </ProjectContainer>
     </Layout>
@@ -84,16 +85,6 @@ const ProjectLinksContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-`
-
-const StyledHr = styled.hr`
-  margin: auto;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-
-  width: 70%;
-
-  background-color: ${props => props.theme.text};
 `
 
 const Title = styled.div`
