@@ -10,10 +10,18 @@ const Contact = () => {
     <Container id={'contact'}>
       <p>Get in touch!</p>
       <p>
-        <ExternalLink href="https://www.linkedin.com/in/lucian-carp-503840170/">
+        <ExternalLink
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.linkedin.com/in/lucian-carp-503840170/"
+        >
           <StyledLinkedin />
         </ExternalLink>
-        <ExternalLink href="https://github.com/luciancarp">
+        <ExternalLink
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/luciancarp"
+        >
           <StyledGithub />
         </ExternalLink>
       </p>

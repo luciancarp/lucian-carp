@@ -9,7 +9,7 @@ import { Gallery } from '../components/gallery'
 import ArrowDrop from '../assets/arrow-drop.svg'
 import Stack from '../components/stack'
 import ProjectLinks from '../components/project-links'
-import Hr from '../components/Hr'
+import Hr from '../components/hr'
 
 // GatsbyContentfulFluid not working in graphiql or playground
 export const query = graphql`

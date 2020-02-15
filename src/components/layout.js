@@ -51,9 +51,6 @@ const Content = styled.main`
 `
 
 const GlobalStyle = createGlobalStyle`
-  // @import url('https://fonts.googleapis.com/css?family=Arvo:400i&display=swap');
-  // @import url('https://fonts.googleapis.com/css?family=Montserrat:900&display=swap');
-
   body,
   html,
   #root {
