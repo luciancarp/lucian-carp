@@ -8,8 +8,8 @@ const About = () => (
   <Container>
     <Text>
       I am a developer who is just finishing his MEng Computer Science Degree at
-      the University of Bristol. I like clean code and I am always ready to
-      improve and learn more best practices.
+      the University of Bristol. I always strive to improve by staying up to
+      date on the best practices and technologies.
     </Text>
     <LandingArrow />
   </Container>
