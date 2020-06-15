@@ -10,7 +10,7 @@ const GalleryControls = ({ images, paginate, imageIndex }) => {
         <StyledArrow />
       </ButtonLeft>
       {images.map(image => {
-        let index = images.findIndex(i => i.fluid.src === image.fluid.src)
+        let index = images.findIndex(i => i.file.url === image.file.url)
         return <Bullet displayed={imageIndex === index}>•</Bullet>
       })}
       <ButtonRight onClick={() => paginate(1)}>

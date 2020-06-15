@@ -63,7 +63,23 @@ export const Gallery = ({ images }) => {
             }
           }}
         >
-          <Img fluid={{ ...images[imageIndex].fluid, aspectRatio: 1.77 }} />
+          {images[imageIndex].fluid !== null ? (
+            <Img fluid={{ ...images[imageIndex].fluid, aspectRatio: 1.77 }} />
+          ) : (
+            <div>
+              <iframe
+                src={images[imageIndex].description}
+                title={images[imageIndex].title}
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                frameBorder="0"
+                webkitallowfullscreen="true"
+                mozallowfullscreen="true"
+                allowFullScreen
+                width="600"
+                height="337"
+              />
+            </div>
+          )}
         </AnimatedContainer>
       </StyledAnimatePresence>
       <GalleryControls
