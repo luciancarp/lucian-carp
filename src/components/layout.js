@@ -75,15 +75,15 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${fonts.header};
     text-transform: uppercase;
     font-style: normal;
-    letter-spacing: 0.1rem;
+    /* letter-spacing: 0.1rem; */
   }
 
   h1 {
-    letter-spacing: 0.2rem;
+    /* letter-spacing: 0.2rem; */
   }
 
   p {
-    text-align: justify;
+    /* text-align: justify; */
   }
 `
 

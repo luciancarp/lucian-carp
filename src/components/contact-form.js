@@ -132,7 +132,7 @@ const StyledForm = styled.form`
     padding: 0.5rem;
     border-style: solid;
     border-width: 2px 2px 2px 2px;
-    border-radius: 5px 5px 5px 5px;
+    /* border-radius: 5px 5px 5px 5px; */
     border-color: ${props => props.theme.text};
     background: ${props => props.theme.background};
     font-family: inherit;
