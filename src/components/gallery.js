@@ -47,7 +47,7 @@ export const Gallery = ({ images }) => {
           animate="center"
           exit="exit"
           transition={{
-            x: { type: 'spring', stiffness: 300, damping: 200 },
+            x: { type: 'spring', stiffness: 500, damping: 55 },
             opacity: { duration: 0.2 }
           }}
           drag="x"
@@ -64,7 +64,7 @@ export const Gallery = ({ images }) => {
           }}
         >
           {images[imageIndex].fluid !== null ? (
-            <Img fluid={{ ...images[imageIndex].fluid, aspectRatio: 1.77 }} />
+            <Img draggable="false" fluid={{ ...images[imageIndex].fluid, aspectRatio: 1.77 }} />
           ) : (
             <div>
               <iframe

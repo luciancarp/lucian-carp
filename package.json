@@ -5,9 +5,10 @@
   "version": "0.1.0",
   "author": "Lucian Carp",
   "dependencies": {
-    "@contentful/rich-text-react-renderer": "^13.4.0",
+    "@contentful/rich-text-react-renderer": "^14.1.1",
+    "@popmotion/popcorn": "^0.4.4",
     "babel-plugin-styled-components": "^1.10.6",
-    "framer-motion": "^1.8.4",
+    "framer-motion": "^2.6.10",
     "gatsby": "^2.19.12",
     "gatsby-image": "^2.2.6",
     "gatsby-plugin-manifest": "^2.2.4",
@@ -25,14 +26,14 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-google-recaptcha": "^2.0.1",
-    "react-helmet": "^5.2.1",
+    "react-helmet": "^6.1.0",
     "react-scroll": "^1.7.12",
     "react-scrollspy": "^3.4.0",
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
     "env-cmd": "^10.0.1",
-    "prettier": "^1.18.2"
+    "prettier": "^2.1.1"
   },
   "keywords": [
     "gatsby"
