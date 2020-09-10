@@ -6,7 +6,7 @@ const LandingMain = () => {
   return (
     <Container id={'main'}>
       <MainTitle>Lucian Carp</MainTitle>
-      <h2>Full-stack developer</h2>
+      <h2>Full stack developer</h2>
     </Container>
   )
 }
@@ -18,8 +18,8 @@ const Container = styled.section`
 
 const MainTitle = styled.h1`
   display: inline-block;
-  color: ${props => props.theme.primary};
-  border-bottom: 0.15rem solid ${props => props.theme.text};
+  color: ${(props) => props.theme.primary};
+  border-bottom: 0.15rem solid ${(props) => props.theme.text};
 
   font-size: 2rem;
   line-height: 3rem;
