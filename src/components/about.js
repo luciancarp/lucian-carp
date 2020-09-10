@@ -7,9 +7,10 @@ import { spaces } from '../styles/global'
 const About = () => (
   <Container>
     <Text>
-      I am a developer who is just finishing his MEng Computer Science Degree at
-      the University of Bristol. I always strive to improve by staying up to
-      date on the best practices and technologies.
+      A Computer Science graduate of the University of Bristol who always
+      strives to improve by staying up to date on the best practices and
+      technologies. Has developed multiple full-stack applications and also
+      worked as part of teams on various projects.
     </Text>
     <LandingArrow />
   </Container>
