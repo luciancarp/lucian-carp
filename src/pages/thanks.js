@@ -9,7 +9,7 @@ const Thanks = () => (
     <SEO title="Thank you!" />
     <Title>Thank you!</Title>
     <p>Thank you for contacting me. I will get in touch with you shortly.</p>
-    <StyledLink>Home</StyledLink>
+    <StyledLink destination="/" title="home" />
   </Layout>
 )
 

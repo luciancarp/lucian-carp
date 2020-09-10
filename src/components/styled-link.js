@@ -9,14 +9,14 @@ const Style = styled(Link)`
     margin: 0;
   }
 
-  color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
   transition: color 0.2s;
   -webkit-transition: color 0.2s;
   transition-timing-function: ease-out;
 
   @media (min-width: ${screenSizes.laptop}) {
     &:hover {
-      color: ${props => props.theme.primary};
+      color: ${(props) => props.theme.primary};
     }
   }
 `
@@ -24,17 +24,15 @@ const Style = styled(Link)`
 const Right = styled.p`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 `
 
-const StyledLink = ({ children }) => {
-  return (
-    <Right>
-      <Style>
-        <h3>{children}</h3>
-      </Style>
-    </Right>
-  )
-}
+const StyledLink = ({ title, destination }) => (
+  <Right>
+    <Style to={destination}>
+      <h3>{title}</h3>
+    </Style>
+  </Right>
+)
 
 export default StyledLink
