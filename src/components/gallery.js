@@ -7,7 +7,7 @@ import Img from 'gatsby-image'
 import GalleryControls from './gallery-controls'
 
 const variants = {
-  enter: direction => ({
+  enter: (direction) => ({
     x: direction > 0 ? 500 : -500,
     opacity: 0,
     scale: 0.75
@@ -18,7 +18,7 @@ const variants = {
     opacity: 1,
     scale: 1
   },
-  exit: direction => ({
+  exit: (direction) => ({
     zIndex: 0,
     x: direction < 0 ? 500 : -500,
     opacity: 0,
@@ -31,7 +31,7 @@ export const Gallery = ({ images }) => {
 
   const imageIndex = wrap(0, images.length, page)
 
-  const paginate = newDirection => {
+  const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection])
   }
 
@@ -64,21 +64,24 @@ export const Gallery = ({ images }) => {
           }}
         >
           {images[imageIndex].fluid !== null ? (
-            <Img draggable="false" fluid={{ ...images[imageIndex].fluid, aspectRatio: 1.77 }} />
+            <Img
+              draggable="false"
+              fluid={{ ...images[imageIndex].fluid, aspectRatio: 1.77 }}
+            />
           ) : (
-            <div>
-              <iframe
-                src={images[imageIndex].description}
-                title={images[imageIndex].title}
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                frameBorder="0"
-                webkitallowfullscreen="true"
-                mozallowfullscreen="true"
-                allowFullScreen
-                width="600"
-                height="337"
-              />
-            </div>
+            // <div>
+            <StyledIframe
+              src={images[imageIndex].description}
+              title={images[imageIndex].title}
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              frameBorder="0"
+              webkitallowfullscreen="true"
+              mozallowfullscreen="true"
+              allowFullScreen
+              // width="600"
+              // height="337"
+            />
+            // </div>
           )}
         </AnimatedContainer>
       </StyledAnimatePresence>
@@ -93,6 +96,22 @@ export const Gallery = ({ images }) => {
 
 const StyledAnimatePresence = styled(AnimatePresence)`
   position: relative;
+`
+
+const StyledIframe = styled.iframe`
+  display: block;
+  width: 100%;
+  height: 200px;
+
+  @media (min-width: 425px) {
+    height: 275px;
+  }
+
+  @media (min-width: 600px) {
+    height: 337px;
+  }
+
+  border: none;
 `
 
 const AnimatedContainer = styled(motion.div)`
