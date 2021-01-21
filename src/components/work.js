@@ -101,6 +101,11 @@ const StyledLink = styled(Link)`
 
   color: ${(props) => props.theme.text};
 
+  background-color: none;
+  transition: background-color 0.3s;
+  -webkit-transition: background-color 0.3s;
+  transition-timing-function: ease-in-out;
+
   @media (min-width: ${screenSizes.laptop}) {
     &:hover {
       background-color: ${(props) => props.theme.backgroundoppositeTransp};
