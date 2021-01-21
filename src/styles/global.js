@@ -13,15 +13,15 @@ export const fontSizes = {
 export const colors = {
   primary: '#ff4500',
   background: '#1a1a1a',
-  backgroundTransp: 'rgba(26, 26, 26, 0.5)',
+  backgroundTransp: 'rgba(16, 16, 16, 0.5)',
   text: '#ccc'
 }
 
 export const darkTheme = {
   name: 'dark',
   primary: '#ff4500',
-  background: '#1a1a1a',
-  backgroundTransp: 'rgba(26, 26, 26, 0.5)',
+  background: '#101010',
+  backgroundTransp: 'rgba(16, 16, 16, 0.5)',
   backgroundoppositeTransp: 'rgba(238, 238, 238, 0.1)',
   text: '#eee'
 }
@@ -31,7 +31,7 @@ export const lightTheme = {
   primary: '#ff4500',
   background: '#eee',
   backgroundTransp: 'rgba(238, 238, 238, 0.5)',
-  backgroundoppositeTransp: 'rgba(26, 26, 26, 0.1)',
+  backgroundoppositeTransp: 'rgba(16, 16, 16, 0.1)',
   text: '#1a1a1a'
 }
 

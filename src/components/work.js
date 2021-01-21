@@ -4,7 +4,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import Hr from './hr'
 
-import { spaces, screenSizes } from '../styles/global'
+import { spaces, screenSizes, fontSizes } from '../styles/global'
 
 const Work = () => {
   const data = useStaticQuery(graphql`
@@ -154,6 +154,11 @@ const WorkItem = styled.li`
     display: inline-block;
     border-bottom: 0.15rem solid ${(props) => props.theme.text};
     line-height: 2rem;
+
+    font-size: ${fontSizes.regular};
+    @media (min-width: ${screenSizes.laptop}) {
+      font-size: ${fontSizes.large};
+    }
   }
 `
 

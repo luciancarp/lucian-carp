@@ -22,7 +22,7 @@ const Header = () => (
             offset={-70}
             duration={500}
           >
-            <h2>Main</h2>
+            <h2>About Me</h2>
           </Link>
         </NavItem>
         <NavItem>
@@ -72,13 +72,13 @@ const Container = styled.header`
   -webkit-transition: background-color 0.2s;
   transition-timing-function: ease-out;
 
-  background-color: ${props => props.theme.background};
+  background-color: ${(props) => props.theme.background};
   min-height: 10vh;
   display: flex;
   align-items: center;
 
   @supports (backdrop-filter: none) {
-    background-color: ${props => props.theme.backgroundTransp};
+    background-color: ${(props) => props.theme.backgroundTransp};
     backdrop-filter: blur(5px);
   }
 `
@@ -88,7 +88,7 @@ const NavMenu = styled.nav`
   margin-bottom: auto;
 
   .is-current {
-    color: ${props => props.theme.primary};
+    color: ${(props) => props.theme.primary};
   }
 `
 
@@ -109,7 +109,7 @@ const NavItem = styled.li`
 
   @media (min-width: ${screenSizes.laptop}) {
     &:hover {
-      color: ${props => props.theme.primary};
+      color: ${(props) => props.theme.primary};
     }
   }
 
@@ -118,12 +118,12 @@ const NavItem = styled.li`
     margin-right: 1rem;
     display: inline-block;
 
-    font-size: 1.2rem;
-    border-bottom: 0.15rem solid ${props => props.theme.text};
+    font-size: 1rem;
+    border-bottom: 0.15rem solid ${(props) => props.theme.text};
     line-height: 2rem;
 
     @media (min-width: ${screenSizes.mobileL}) {
-      font-size: 1.62671rem;
+      font-size: 1.4rem;
       line-height: 2.5rem;
     }
   }
