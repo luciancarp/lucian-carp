@@ -12,8 +12,12 @@ const LandingMain = () => {
 }
 
 const Container = styled.section`
-  padding-top: 10vh;
+  padding-top: 15vh;
   min-height: 30vh;
+
+  @media (min-width: ${screenSizes.laptop}) {
+    scroll-snap-align: start;
+  }
 `
 
 const MainTitle = styled.h1`

@@ -55,8 +55,8 @@ const GlobalStyle = createGlobalStyle`
   html,
   #root {
     font-family: ${fonts.body};
-    color:${props => props.theme.text};
-    background-color: ${props => props.theme.background};
+    color:${(props) => props.theme.text};
+    background-color: ${(props) => props.theme.background};
     font-size: ${fontSizes.regular};
     font-weight: 400;
     font-style: normal;
@@ -64,6 +64,8 @@ const GlobalStyle = createGlobalStyle`
     transition: background-color 0.2s;
     -webkit-transition: background-color 0.2s;
     transition-timing-function: ease-out;
+
+    scroll-snap-type: y proximity;
   }
 
   h1,

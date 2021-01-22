@@ -88,8 +88,8 @@ const Container = styled.section`
 `
 
 const Text = styled.p`
-  position: -webkit-sticky;
-  position: sticky;
+  /* position: -webkit-sticky;
+  position: sticky; */
   top: 10vh;
   z-index: 0;
   padding-top: ${spaces.wide};

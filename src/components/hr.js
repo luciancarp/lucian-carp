@@ -5,7 +5,7 @@ const Hr = styled.hr`
   margin-top: 2rem;
   margin-bottom: 2rem;
 
-  width: 90%;
+  width: 100%;
   opacity: 0.5;
 
   background-color: ${(props) => props.theme.text};
