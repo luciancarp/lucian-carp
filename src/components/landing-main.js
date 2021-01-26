@@ -15,7 +15,7 @@ const Container = styled.section`
   padding-top: 15vh;
   height: 35vh;
 
-  @media (min-width: ${screenSizes.laptop}) {
+  @media (min-width: 1200px) {
     scroll-snap-align: start;
   }
 `
