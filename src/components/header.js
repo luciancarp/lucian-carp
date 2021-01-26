@@ -11,7 +11,7 @@ const Header = () => (
       <NavList
         items={['main', 'work', 'contact']}
         currentClassName="is-current"
-        offset={0}
+        offset={-20}
       >
         <NavItem>
           <Link
@@ -19,7 +19,7 @@ const Header = () => (
             to="main"
             spy={true}
             smooth={true}
-            offset={0}
+            offset={-70}
             duration={500}
           >
             <h2>About Me</h2>
@@ -31,7 +31,7 @@ const Header = () => (
             to="work"
             spy={true}
             smooth={true}
-            offset={0}
+            offset={-70}
             duration={500}
           >
             <h2>Work</h2>
@@ -43,7 +43,7 @@ const Header = () => (
             to="contact"
             spy={true}
             smooth={true}
-            offset={0}
+            offset={-70}
             duration={500}
           >
             <h2>Contact</h2>
