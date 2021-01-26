@@ -67,33 +67,40 @@ const Project = (props) => {
       variants={opacityVariants}
       transition={{ duration: 0.3, ease: 'easeOut' }}
     >
-      <Content>
-        <SEO title={props.data.contentfulProject.title} />
-        <ProjectContainer>
-          <Title>
-            <LeftButton onClick={() => window.history.back()}>
-              <StyledArrowDrop />
-            </LeftButton>
-            <h1>{props.data.contentfulProject.title}</h1>
-          </Title>
-          <p>{props.data.contentfulProject.date}</p>
-          <Gallery images={props.data.contentfulProject.images} />
-          <ProjectLinksContainer>
-            <ProjectLinks links={props.data.contentfulProject.links} />
-          </ProjectLinksContainer>
-          <Text>
-            {documentToReactComponents(
-              props.data.contentfulProject.body.json,
-              options
-            )}
-          </Text>
-          <Hr />
-          <Stack stack={props.data.contentfulProject.stack} />
-        </ProjectContainer>
-      </Content>
+      <Align>
+        <Content>
+          <SEO title={props.data.contentfulProject.title} />
+          <ProjectContainer>
+            <Title>
+              <LeftButton onClick={() => window.history.back()}>
+                <StyledArrowDrop />
+              </LeftButton>
+              <h1>{props.data.contentfulProject.title}</h1>
+            </Title>
+            <p>{props.data.contentfulProject.date}</p>
+            <Gallery images={props.data.contentfulProject.images} />
+            <ProjectLinksContainer>
+              <ProjectLinks links={props.data.contentfulProject.links} />
+            </ProjectLinksContainer>
+            <Text>
+              {documentToReactComponents(
+                props.data.contentfulProject.body.json,
+                options
+              )}
+            </Text>
+            <Hr />
+            <Stack stack={props.data.contentfulProject.stack} />
+          </ProjectContainer>
+        </Content>
+      </Align>
     </Container>
   )
 }
+const Align = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
 const Container = styled(motion.div)`
   margin: 0 auto;
   max-width: 1024px;
@@ -103,6 +110,12 @@ const Container = styled(motion.div)`
 
   display: flex;
   flex-direction: column;
+
+  align-items: center;
+  @media (min-width: ${screenSizes.laptop}) {
+    align-items: flex-start;
+  }
+
   min-height: 100vh;
 `
 

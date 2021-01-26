@@ -6,15 +6,13 @@ import '../styles/reset.scss'
 
 import Footer from './footer'
 import ThemeSwitcher from './theme-switcher'
-
 import LandingMain from '../components/landing-main'
 import Header from '../components/header'
 
-// import { useStaticQuery, graphql } from 'gatsby'
-
-// import Header from './header'
 import { motion } from 'framer-motion'
 import { opacityVariants } from '../styles/variants'
+
+import { screenSizes } from '../styles/global'
 
 const Layout = ({ children }) => {
   return (
@@ -28,14 +26,20 @@ const Layout = ({ children }) => {
         variants={opacityVariants}
         transition={{ duration: 0.3, ease: 'easeOut' }}
       >
-        <LandingMain />
-        <Header />
-        <Content>{children}</Content>
-        <Footer />
+        <Align>
+          <LandingMain />
+          <Header />
+          <Content>{children}</Content>
+          <Footer />
+        </Align>
       </Container>
     </>
   )
 }
+const Align = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 
 const Container = styled(motion.div)`
   margin: 0 auto;
@@ -46,6 +50,12 @@ const Container = styled(motion.div)`
 
   display: flex;
   flex-direction: column;
+
+  align-items: center;
+  @media (min-width: ${screenSizes.laptop}) {
+    align-items: flex-start;
+  }
+
   min-height: 100vh;
 `
 
