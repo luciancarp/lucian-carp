@@ -7,6 +7,9 @@ import '../styles/reset.scss'
 import Footer from './footer'
 import ThemeSwitcher from './theme-switcher'
 
+import LandingMain from '../components/landing-main'
+import Header from '../components/header'
+
 // import { useStaticQuery, graphql } from 'gatsby'
 
 // import Header from './header'
@@ -18,12 +21,15 @@ const Layout = ({ children }) => {
     <>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <ThemeSwitcher />
+
       <Container
         initial="hidden"
         animate="visible"
         variants={opacityVariants}
         transition={{ duration: 0.3, ease: 'easeOut' }}
       >
+        <LandingMain />
+        <Header />
         <Content>{children}</Content>
         <Footer />
       </Container>
