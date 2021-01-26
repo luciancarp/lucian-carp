@@ -112,7 +112,7 @@ const Container = styled(motion.div)`
   flex-direction: column;
 
   align-items: center;
-  @media (min-width: ${screenSizes.laptop}) {
+  @media (min-width: 1200px) {
     align-items: flex-start;
   }
 

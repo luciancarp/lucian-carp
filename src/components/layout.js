@@ -12,8 +12,6 @@ import Header from '../components/header'
 import { motion } from 'framer-motion'
 import { opacityVariants } from '../styles/variants'
 
-import { screenSizes } from '../styles/global'
-
 const Layout = ({ children }) => {
   return (
     <>
