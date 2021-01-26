@@ -73,7 +73,6 @@ const Container = styled.header`
   transition-timing-function: ease-out;
 
   background-color: ${(props) => props.theme.background};
-  min-height: 10vh;
   display: flex;
   align-items: center;
 

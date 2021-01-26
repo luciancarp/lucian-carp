@@ -43,9 +43,6 @@ const LandingArrow = () => (
 
 const Container = styled(motion.div)`
   padding-top: 0;
-  @media (min-width: ${screenSizes.laptop}) {
-    padding-top: 10vh;
-  }
 
   display: flex;
   justify-content: center;
@@ -69,17 +66,15 @@ const StyledArrowDrop = styled(ArrowDrop)`
   width: 5rem;
   transform: rotate(-90deg);
   margin-right: 0.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
 
-  fill: ${props => props.theme.text};
+  fill: ${(props) => props.theme.text};
   transition: fill 0.2s;
   -webkit-transition: fill 0.2s;
   transition-timing-function: ease-out;
 
   @media (min-width: ${screenSizes.laptop}) {
     &:hover {
-      fill: ${props => props.theme.primary};
+      fill: ${(props) => props.theme.primary};
     }
   }
 `

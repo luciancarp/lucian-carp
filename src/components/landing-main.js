@@ -13,7 +13,7 @@ const LandingMain = () => {
 
 const Container = styled.section`
   padding-top: 15vh;
-  min-height: 30vh;
+  height: 35vh;
 
   @media (min-width: ${screenSizes.laptop}) {
     scroll-snap-align: start;

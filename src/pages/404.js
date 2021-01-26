@@ -14,9 +14,7 @@ const NotFoundPage = () => (
   </Container>
 )
 
-const Title = styled.h1`
-  margin-top: 10vh;
-`
+const Title = styled.h1``
 
 const Container = styled.div`
   width: 100%;

@@ -102,6 +102,9 @@ const Line = styled.p`
 
 const Container = styled.section`
   margin: 0;
+  @media (min-width: ${screenSizes.laptop}) {
+    height: 60vh;
+  }
 `
 
 const Text = styled.p`

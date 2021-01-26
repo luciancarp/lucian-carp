@@ -79,12 +79,8 @@ const StyledCategory = styled.h2`
 `
 
 const Container = styled.section`
-  padding-top: 5vh;
+  margin-top: 2rem;
   min-height: 100vh;
-
-  h1 {
-    padding-top: 5vh;
-  }
 `
 
 const StyledLink = styled(Link)`
