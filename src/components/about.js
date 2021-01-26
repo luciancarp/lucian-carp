@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled, { css } from 'styled-components'
 import LandingArrow from '../components/landing-arrow'
 
@@ -7,43 +7,61 @@ import Linkedin from '../assets/linkedin.svg'
 
 import { spaces, screenSizes } from '../styles/global'
 
-const About = () => (
-  <Container>
-    <Text>
-      <Line>A CS graduate of the University of Bristol.</Line>
-      <Line>Has developed multiple full stack applications and websites.</Line>
-      <Line>
-        Always strives to improve by staying up to date on the best practices
-        and technologies.
-      </Line>
-      <Links>
-        <ExternalLink
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.linkedin.com/in/lucian-carp-503840170/"
-        >
-          <StyledLinkedin />
-        </ExternalLink>
-        <ExternalLink
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/luciancarp"
-        >
-          <StyledGithub />
-        </ExternalLink>
-        <ExternalLink
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://assets.ctfassets.net/9xmdi7tzsga7/4bt4ADkjC1sRlpSg4q3g0O/5d63490356e82076d7e491616b8e2ea2/lucian-carp.pdf"
-        >
-          <h3>CV</h3>
-        </ExternalLink>
-      </Links>
-    </Text>
-    <LandingArrow />
-  </Container>
-)
+const About = () => {
+  const [arrow, setArrow] = useState(true)
 
+  useEffect(() => {
+    const showArrow = () => {
+      if (window.innerWidth < 1024) {
+        setArrow(false)
+      } else {
+        setArrow(true)
+      }
+    }
+
+    window.addEventListener('resize', showArrow)
+    return () => window.removeEventListener('resize', showArrow)
+  }, [arrow])
+
+  return (
+    <Container>
+      <Text>
+        <Line>A CS graduate of the University of Bristol.</Line>
+        <Line>
+          Has developed multiple full stack applications and websites.
+        </Line>
+        <Line>
+          Always strives to improve by staying up to date on the best practices
+          and technologies.
+        </Line>
+        <Links>
+          <ExternalLink
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/lucian-carp-503840170/"
+          >
+            <StyledLinkedin />
+          </ExternalLink>
+          <ExternalLink
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/luciancarp"
+          >
+            <StyledGithub />
+          </ExternalLink>
+          <ExternalLink
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://assets.ctfassets.net/9xmdi7tzsga7/4bt4ADkjC1sRlpSg4q3g0O/5d63490356e82076d7e491616b8e2ea2/lucian-carp.pdf"
+          >
+            <h3>CV</h3>
+          </ExternalLink>
+        </Links>
+      </Text>
+      {arrow && <LandingArrow />}
+    </Container>
+  )
+}
 const ExternalLink = styled.a`
   margin-right: ${spaces.wide};
   padding: 0;
@@ -83,16 +101,13 @@ const Line = styled.p`
 `
 
 const Container = styled.section`
-  min-height: 60vh;
   margin: 0;
 `
 
 const Text = styled.p`
-  /* position: -webkit-sticky;
-  position: sticky; */
-  top: 10vh;
   z-index: 0;
   padding-top: ${spaces.wide};
+  padding-bottom: ${spaces.wide};
   margin-bottom: 0;
 `
 
