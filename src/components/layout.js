@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components'
 
 import '../styles/reset.scss'
-import { fontSizes, fonts } from '../styles/global'
+
 import Footer from './footer'
 import ThemeSwitcher from './theme-switcher'
 
@@ -17,8 +17,6 @@ const Layout = ({ children }) => {
   return (
     <>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-
-      <GlobalStyle />
       <ThemeSwitcher />
       <Container
         initial="hidden"
@@ -48,45 +46,6 @@ const Container = styled(motion.div)`
 const Content = styled.main`
   flex-grow: 1;
   max-width: 600px;
-`
-
-const GlobalStyle = createGlobalStyle`
-  body,
-  html,
-  #root {
-    font-family: ${fonts.body};
-    color:${(props) => props.theme.text};
-    background-color: ${(props) => props.theme.background};
-    font-size: ${fontSizes.regular};
-    font-weight: 400;
-    font-style: normal;
-
-    transition: background-color 0.2s;
-    -webkit-transition: background-color 0.2s;
-    transition-timing-function: ease-out;
-
-    scroll-snap-type: y proximity;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: ${fonts.header};
-    text-transform: uppercase;
-    font-style: normal;
-    /* letter-spacing: 0.1rem; */
-  }
-
-  h1 {
-    /* letter-spacing: 0.2rem; */
-  }
-
-  p {
-    /* text-align: justify; */
-  }
 `
 
 Layout.propTypes = {

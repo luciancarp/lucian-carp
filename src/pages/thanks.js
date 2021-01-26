@@ -6,9 +6,11 @@ import StyledLink from '../components/styled-link'
 const Thanks = () => (
   <Container>
     <SEO title="Thank you!" />
-    <Title>Thank you!</Title>
-    <p>Thank you for contacting me. I will get in touch with you shortly.</p>
-    <StyledLink destination="/" title="home" />
+    <Text>
+      <Title>Thank you!</Title>
+      <p>Thank you for contacting me. I will get in touch with you shortly.</p>
+      <StyledLink destination="/" title="home" />
+    </Text>
   </Container>
 )
 
@@ -23,6 +25,12 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`
+
+const Text = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `
 
 export default Thanks

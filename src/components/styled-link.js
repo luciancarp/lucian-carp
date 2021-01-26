@@ -5,8 +5,8 @@ import { screenSizes } from '../styles/global'
 
 const Style = styled(Link)`
   text-decoration: none;
-  h4 {
-    margin: 0;
+  h3 {
+    border-bottom: 0.15rem solid ${(props) => props.theme.text};
   }
 
   color: ${(props) => props.theme.text};

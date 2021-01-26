@@ -6,9 +6,11 @@ import StyledLink from '../components/styled-link'
 const NotFoundPage = () => (
   <Container>
     <SEO title="404: Not found" />
-    <Title>NOT FOUND</Title>
-    <p>You just hit a route that doesn&#39;t exist...</p>
-    <StyledLink destination="/" title="home" />
+    <Text>
+      <Title>NOT FOUND</Title>
+      <p>You just hit a route that doesn&#39;t exist...</p>
+      <StyledLink destination="/" title="home" />
+    </Text>
   </Container>
 )
 
@@ -23,6 +25,12 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`
+
+const Text = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `
 
 export default NotFoundPage
