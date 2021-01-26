@@ -2,8 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import '../styles/reset.scss'
-
 import Footer from './footer'
 import ThemeSwitcher from './theme-switcher'
 import LandingMain from '../components/landing-main'
