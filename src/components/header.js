@@ -60,13 +60,13 @@ const Container = styled.header`
   top: 0;
   z-index: 1;
 
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: ${spaces.wide};
-  padding-right: ${spaces.wide};
+  padding-top: ${spaces.narrow};
+  padding-bottom: ${spaces.narrow};
+  padding-left: ${spaces.regular};
+  padding-right: ${spaces.regular};
 
-  margin-left: -${spaces.wide};
-  margin-right: -${spaces.wide};
+  margin-left: -${spaces.regular};
+  margin-right: -${spaces.regular};
 
   transition: background-color 0.2s;
   -webkit-transition: background-color 0.2s;

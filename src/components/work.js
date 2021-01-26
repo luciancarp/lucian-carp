@@ -125,21 +125,21 @@ const GridContainer = styled.ul`
   margin: 0;
 
   > :nth-child(2n) {
-    margin-right: -${spaces.wide};
-    padding-right: ${spaces.wide};
-    padding-left: ${spaces.wide};
+    margin-right: -${spaces.regular};
+    padding-right: ${spaces.regular};
+    padding-left: ${spaces.regular};
   }
 
   > :nth-child(2n-1) {
-    margin-left: -${spaces.wide};
-    padding-left: ${spaces.wide};
-    padding-right: ${spaces.wide};
+    margin-left: -${spaces.regular};
+    padding-left: ${spaces.regular};
+    padding-right: ${spaces.regular};
   }
 `
 
 const WorkItem = styled.li`
-  padding-top: ${spaces.wide};
-  padding-bottom: ${spaces.wide};
+  padding-top: ${spaces.regular};
+  padding-bottom: ${spaces.regular};
 
   background-color: none;
   transition: background-color 0.3s;
