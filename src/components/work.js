@@ -118,28 +118,38 @@ const StyledLink = styled(Link)`
 
 const GridContainer = styled.ul`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr;
+  /* grid-auto-rows: 1fr; */
 
   list-style-type: none;
   margin: 0;
 
-  > :nth-child(2n) {
-    margin-right: -${spaces.regular};
-    padding-right: ${spaces.regular};
-    padding-left: ${spaces.regular};
-  }
+  @media (min-width: ${screenSizes.laptop}) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
 
-  > :nth-child(2n-1) {
-    margin-left: -${spaces.regular};
-    padding-left: ${spaces.regular};
-    padding-right: ${spaces.regular};
+    list-style-type: none;
+    margin: 0;
+
+    > :nth-child(2n) {
+      margin-right: -${spaces.regular};
+      padding-right: ${spaces.regular};
+      padding-left: ${spaces.regular};
+    }
+
+    > :nth-child(2n-1) {
+      margin-left: -${spaces.regular};
+      padding-left: ${spaces.regular};
+      padding-right: ${spaces.regular};
+    }
   }
 `
 
 const WorkItem = styled.li`
   padding-top: ${spaces.regular};
   padding-bottom: ${spaces.regular};
+  margin: 0;
 
   background-color: none;
   transition: background-color 0.3s;
@@ -152,12 +162,15 @@ const WorkItem = styled.li`
     transition-timing-function: ease-out;
 
     display: inline-block;
-    border-bottom: 0.15rem solid ${(props) => props.theme.text};
+    border-bottom: 0.1rem solid ${(props) => props.theme.text};
     line-height: 2rem;
 
     font-size: ${fontSizes.regular};
+
+    margin-bottom: ${spaces.narrow};
     @media (min-width: ${screenSizes.laptop}) {
-      font-size: ${fontSizes.large};
+      font-size: ${fontSizes.regular};
+      margin-bottom: ${spaces.narrow};
     }
   }
 `

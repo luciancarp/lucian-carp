@@ -1,9 +1,16 @@
 import styled from 'styled-components'
+import { screenSizes } from '../styles/global'
 
 const Hr = styled.hr`
   margin: auto;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  @media (min-width: ${screenSizes.laptop}) {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 
   width: 100%;
   opacity: 0.5;
