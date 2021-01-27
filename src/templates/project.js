@@ -12,6 +12,7 @@ import Hr from '../components/hr'
 
 import { motion } from 'framer-motion'
 import { opacityVariants } from '../styles/variants'
+import { spaces } from '../styles/global'
 
 // GatsbyContentfulFluid not working in graphiql or playground
 export const query = graphql`
@@ -67,21 +68,24 @@ const Project = (props) => {
       variants={opacityVariants}
       transition={{ duration: 0.3, ease: 'easeInOut' }}
     >
-      <Align>
-        <Content>
+      <Content>
+        <Align>
           <SEO title={props.data.contentfulProject.title} />
           <ProjectContainer>
-            <Title>
-              <LeftButton onClick={() => window.history.back()}>
-                <StyledArrowDrop />
-              </LeftButton>
-              <h1>{props.data.contentfulProject.title}</h1>
-            </Title>
+            <TitleLine>
+              <Title>
+                <LeftButton onClick={() => window.history.back()}>
+                  <StyledArrowDrop />
+                </LeftButton>
+                <h1>{props.data.contentfulProject.title}</h1>
+              </Title>
+              <ProjectLinksContainer>
+                <ProjectLinks links={props.data.contentfulProject.links} />
+              </ProjectLinksContainer>
+            </TitleLine>
             {/* <p>{props.data.contentfulProject.date}</p> */}
             <Gallery images={props.data.contentfulProject.images} />
-            <ProjectLinksContainer>
-              <ProjectLinks links={props.data.contentfulProject.links} />
-            </ProjectLinksContainer>
+
             <Text>
               {documentToReactComponents(
                 props.data.contentfulProject.body.json,
@@ -91,14 +95,26 @@ const Project = (props) => {
             <Hr />
             <Stack stack={props.data.contentfulProject.stack} />
           </ProjectContainer>
-        </Content>
-      </Align>
+        </Align>
+      </Content>
     </Container>
   )
 }
+
+const TitleLine = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: ${spaces.wide};
+`
+
 const Align = styled.div`
   display: flex;
   flex-direction: column;
+
+  width: 100%;
 `
 
 const Container = styled(motion.div)`
@@ -133,14 +149,12 @@ const ProjectLinksContainer = styled.div`
 const Title = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 
   h1 {
     margin: 0;
   }
-
-  margin-bottom: 1.5rem;
 `
 
 const StyledArrowDrop = styled(ArrowDrop)`
@@ -174,10 +188,13 @@ const Text = styled.p`
   padding: 0;
   margin: 0;
   margin-top: 2rem;
+
+  width: 100%;
 `
 
 const ProjectContainer = styled.div`
   padding-top: 10vh;
+  width: 100%;
 `
 
 export default Project
