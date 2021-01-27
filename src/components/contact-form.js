@@ -71,7 +71,7 @@ export default function ContactForm() {
             <textarea
               name="message"
               onChange={handleChange}
-              style={{ height: '10rem', resize: 'vertical' }}
+              style={{ minHeight: '10rem', resize: 'vertical' }}
             />
           </label>
         </p>
