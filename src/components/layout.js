@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
         initial="hidden"
         animate="visible"
         variants={opacityVariants}
-        transition={{ duration: 0.3, ease: 'easeOut' }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
         <Align>
           <LandingMain />

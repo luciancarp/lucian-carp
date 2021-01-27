@@ -20,8 +20,8 @@ export const colors = {
 export const darkTheme = {
   name: 'dark',
   primary: '#ff4500',
-  background: '#000f14',
-  backgroundTransp: 'rgba(0, 15, 20, 0.5)',
+  background: '#101010',
+  backgroundTransp: 'rgba(16, 16, 16, 0.5)',
   backgroundoppositeTransp: 'rgba(238, 238, 238, 0.1)',
   text: '#eee'
 }
