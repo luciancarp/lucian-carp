@@ -77,7 +77,7 @@ const Project = (props) => {
               </LeftButton>
               <h1>{props.data.contentfulProject.title}</h1>
             </Title>
-            <p>{props.data.contentfulProject.date}</p>
+            {/* <p>{props.data.contentfulProject.date}</p> */}
             <Gallery images={props.data.contentfulProject.images} />
             <ProjectLinksContainer>
               <ProjectLinks links={props.data.contentfulProject.links} />

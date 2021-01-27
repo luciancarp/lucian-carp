@@ -24,40 +24,43 @@ const Work = () => {
     }
   `)
 
+  const Project = ({ title, description, slug }) => (
+    <StyledLink to={`/${slug}`}>
+      <WorkItem>
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </WorkItem>
+    </StyledLink>
+  )
+
   const fullstackList = data.allContentfulProject.edges
     .filter((edge) => edge.node.category === 0)
     .map((edge) => (
-      <StyledLink to={`/${edge.node.slug}`}>
-        <WorkItem>
-          <h3>{edge.node.title}</h3>
-          <Date>{edge.node.date}</Date>
-          <p>{edge.node.description}</p>
-        </WorkItem>
-      </StyledLink>
+      <Project
+        title={edge.node.title}
+        slug={edge.node.slug}
+        description={edge.node.description}
+      />
     ))
 
   const websitesList = data.allContentfulProject.edges
     .filter((edge) => edge.node.category === 1)
     .map((edge) => (
-      <StyledLink to={`/${edge.node.slug}`}>
-        <WorkItem>
-          <h3>{edge.node.title}</h3>
-          <Date>{edge.node.date}</Date>
-          <p>{edge.node.description}</p>
-        </WorkItem>
-      </StyledLink>
+      <Project
+        title={edge.node.title}
+        slug={edge.node.slug}
+        description={edge.node.description}
+      />
     ))
 
   const otherList = data.allContentfulProject.edges
     .filter((edge) => edge.node.category === 2)
     .map((edge) => (
-      <StyledLink to={`/${edge.node.slug}`}>
-        <WorkItem>
-          <h3>{edge.node.title}</h3>
-          <Date>{edge.node.date}</Date>
-          <p>{edge.node.description}</p>
-        </WorkItem>
-      </StyledLink>
+      <Project
+        title={edge.node.title}
+        slug={edge.node.slug}
+        description={edge.node.description}
+      />
     ))
 
   return (
@@ -169,10 +172,6 @@ const WorkItem = styled.li`
       margin-bottom: ${spaces.narrow};
     }
   }
-`
-
-const Date = styled.p`
-  margin-bottom: ${spaces.narrow};
 `
 
 export default Work
