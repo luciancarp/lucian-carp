@@ -38,7 +38,8 @@ export const lightTheme = {
 export const spaces = {
   narrow: '0.75rem',
   regular: '1rem',
-  wide: '1.45rem'
+  wide: '1.45rem',
+  spacer: '4rem'
 }
 
 export const screenSizes = {

@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
-import Hr from './hr'
-
 import { spaces, screenSizes, fontSizes } from '../styles/global'
 
 const Work = () => {
@@ -67,22 +65,26 @@ const Work = () => {
     <Container id={'work'}>
       <StyledCategory>Full Stack Apps</StyledCategory>
       <GridContainer>{fullstackList}</GridContainer>
-      <Hr />
+      <Spacer />
       <StyledCategory>Websites</StyledCategory>
       <GridContainer>{websitesList}</GridContainer>
-      <Hr />
+      <Spacer />
       <StyledCategory>Other Projects</StyledCategory>
       <GridContainer>{otherList}</GridContainer>
     </Container>
   )
 }
 
+const Spacer = styled.div`
+  height: ${spaces.spacer};
+`
+
 const StyledCategory = styled.h2`
   margin-bottom: ${spaces.narrow};
 `
 
 const Container = styled.section`
-  margin-top: 2rem;
+  margin-top: ${spaces.spacer};
   min-height: 100vh;
 `
 
@@ -162,7 +164,7 @@ const WorkItem = styled.li`
 
     display: inline-block;
     border-bottom: 0.1rem solid ${(props) => props.theme.text};
-    line-height: 2rem;
+    line-height: 1.5rem;
 
     font-size: ${fontSizes.regular};
 

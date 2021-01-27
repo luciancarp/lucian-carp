@@ -12,7 +12,7 @@ import Hr from '../components/hr'
 
 import { motion } from 'framer-motion'
 import { opacityVariants } from '../styles/variants'
-import { spaces } from '../styles/global'
+import { spaces, fontSizes } from '../styles/global'
 
 // GatsbyContentfulFluid not working in graphiql or playground
 export const query = graphql`
@@ -154,6 +154,11 @@ const Title = styled.div`
 
   h1 {
     margin: 0;
+
+    font-size: ${fontSizes.large};
+
+    border-bottom: 0.1rem solid ${(props) => props.theme.text};
+    line-height: 2rem;
   }
 `
 
