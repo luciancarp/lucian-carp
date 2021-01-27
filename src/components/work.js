@@ -16,17 +16,27 @@ const Work = () => {
             date(formatString: "MMMM YYYY")
             index
             category
+            stackMain {
+              title
+            }
           }
         }
       }
     }
   `)
 
-  const Project = ({ title, description, slug }) => (
+  const Project = ({ title, description, slug, stack }) => (
     <StyledLink to={`/${slug}`}>
       <WorkItem>
-        <h3>{title}</h3>
-        <p>{description}</p>
+        <div>
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </div>
+        <StackTagsContainer>
+          {stack.map((stackItem) => (
+            <StackTag>{stackItem.title}</StackTag>
+          ))}
+        </StackTagsContainer>
       </WorkItem>
     </StyledLink>
   )
@@ -38,6 +48,7 @@ const Work = () => {
         title={edge.node.title}
         slug={edge.node.slug}
         description={edge.node.description}
+        stack={edge.node.stackMain}
       />
     ))
 
@@ -48,6 +59,7 @@ const Work = () => {
         title={edge.node.title}
         slug={edge.node.slug}
         description={edge.node.description}
+        stack={edge.node.stackMain}
       />
     ))
 
@@ -58,6 +70,7 @@ const Work = () => {
         title={edge.node.title}
         slug={edge.node.slug}
         description={edge.node.description}
+        stack={edge.node.stackMain}
       />
     ))
 
@@ -74,6 +87,21 @@ const Work = () => {
     </Container>
   )
 }
+
+const StackTagsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  margin-top: ${spaces.narrow};
+`
+
+const StackTag = styled.i`
+  color: ${(props) => props.theme.primary};
+  font-size: ${fontSizes.small};
+  margin-right: ${spaces.narrow};
+`
 
 const Spacer = styled.div`
   height: ${spaces.spacer};
@@ -150,6 +178,13 @@ const WorkItem = styled.li`
   padding-top: ${spaces.regular};
   padding-bottom: ${spaces.regular};
   margin: 0;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
 
   background-color: none;
   transition: background-color 0.3s;
