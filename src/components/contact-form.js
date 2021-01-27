@@ -1,22 +1,22 @@
 import React from 'react'
 import { navigate } from 'gatsby'
 import styled from 'styled-components'
-import { screenSizes } from '../styles/global'
+import { screenSizes, spaces } from '../styles/global'
 
 function encode(data) {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
 }
 
 export default function ContactForm() {
   const [state, setState] = React.useState({})
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     const form = e.target
     fetch('/', {
@@ -28,7 +28,7 @@ export default function ContactForm() {
       })
     })
       .then(() => navigate(form.getAttribute('action')))
-      .catch(error => alert(error))
+      .catch((error) => alert(error))
   }
 
   return (
@@ -55,26 +55,24 @@ export default function ContactForm() {
 
         <p>
           <label>
-            Your name
-            <br />
-            <br />
+            <StyledLabelTitle>Your name</StyledLabelTitle>
             <input type="text" name="name" onChange={handleChange} />
           </label>
         </p>
         <p>
           <label>
-            Your email
-            <br />
-            <br />
+            <StyledLabelTitle>Your email</StyledLabelTitle>
             <input type="email" name="email" onChange={handleChange} />
           </label>
         </p>
         <p>
           <label>
-            Message
-            <br />
-            <br />
-            <textarea name="message" onChange={handleChange} />
+            <StyledLabelTitle>Message</StyledLabelTitle>
+            <textarea
+              name="message"
+              onChange={handleChange}
+              style={{ height: '10rem', resize: 'vertical' }}
+            />
           </label>
         </p>
 
@@ -87,6 +85,10 @@ export default function ContactForm() {
     </div>
   )
 }
+
+const StyledLabelTitle = styled.div`
+  padding-bottom: ${spaces.narrow};
+`
 
 const StyledButtonContainer = styled.p`
   display: flex;
@@ -106,7 +108,7 @@ const StyledButton = styled.button`
   background: none;
 
   cursor: pointer;
-  color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
 
   transition: color 0.2s;
   -webkit-transition: color 0.2s;
@@ -114,7 +116,7 @@ const StyledButton = styled.button`
 
   @media (min-width: ${screenSizes.laptop}) {
     &:hover {
-      color: ${props => props.theme.primary};
+      color: ${(props) => props.theme.primary};
     }
   }
 
@@ -131,30 +133,30 @@ const StyledForm = styled.form`
 
     padding: 0.5rem;
     border-style: solid;
-    border-width: 2px 2px 2px 2px;
+    border-width: 0px 0px 2px 0px;
     /* border-radius: 5px 5px 5px 5px; */
-    border-color: ${props => props.theme.text};
-    background: ${props => props.theme.background};
+    border-color: ${(props) => props.theme.text};
+    background: ${(props) => props.theme.backgroundoppositeTransp};
     font-family: inherit;
     font-size: inherit;
-    color: ${props => props.theme.text};
+    color: ${(props) => props.theme.text};
 
     -webkit-transition: border-color 0.2s; /* Safari */
     transition: border-color 0.2s;
     transition-timing-function: ease-out;
 
     &:focus {
-      border-color: ${props => props.theme.primary};
-      background: ${props => props.theme.background};
+      border-color: ${(props) => props.theme.primary};
+      background: ${(props) => props.theme.backgroundoppositeTransp};
       outline: none;
     }
 
     &::placeholder {
-      color: ${props => props.theme.text};
+      color: ${(props) => props.theme.text};
     }
 
     &:hover {
-      border-color: ${props => props.theme.primary};
+      border-color: ${(props) => props.theme.primary};
     }
   }
 `

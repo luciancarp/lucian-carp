@@ -2,10 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import ContactForm from './contact-form'
 
+import { spaces } from '../styles/global'
+
 const Contact = () => {
   return (
     <Container id={'contact'}>
-      <h3>Let's Chat</h3>
+      <h2>Let's Chat</h2>
 
       <ContactForm />
     </Container>
@@ -13,10 +15,10 @@ const Contact = () => {
 }
 
 const Container = styled.section`
-  min-height: 80vh;
-  margin-top: 10vh;
-  h1 {
-    padding-top: 5vh;
+  margin-top: ${spaces.spacer};
+
+  h2 {
+    margin-bottom: ${spaces.wide};
   }
 `
 

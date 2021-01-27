@@ -16,7 +16,7 @@ const Center = styled.div`
 `
 
 const Container = styled.footer`
-  min-height: 10vh;
+  min-height: 5rem;
   max-width: 600px;
 
   display: flex;

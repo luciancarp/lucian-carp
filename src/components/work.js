@@ -85,7 +85,6 @@ const StyledCategory = styled.h2`
 
 const Container = styled.section`
   margin-top: ${spaces.spacer};
-  min-height: 100vh;
 `
 
 const StyledLink = styled(Link)`

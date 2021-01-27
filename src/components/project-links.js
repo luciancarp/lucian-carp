@@ -4,7 +4,7 @@ import GithubSvg from '../assets/github.svg'
 import YoutubeSvg from '../assets/youtube.svg'
 import GitlabSvg from '../assets/gitlab.svg'
 import ExternalLinkSvg from '../assets/external-link.svg'
-import { screenSizes } from '../styles/global'
+import { screenSizes, spaces } from '../styles/global'
 
 const ProjectLinks = ({ links }) => {
   return (
@@ -34,7 +34,7 @@ const ProjectLinks = ({ links }) => {
 }
 
 const Styleda = styled.a`
-  margin-left: 0.75rem;
+  margin-left: ${spaces.regular};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,14 +45,14 @@ const SvgStyle = css`
   height: 35px;
   width: 35px;
 
-  fill: ${props => props.theme.text};
+  fill: ${(props) => props.theme.text};
   transition: fill 0.2s;
   -webkit-transition: fill 0.2s;
   transition-timing-function: ease-out;
 
   @media (min-width: ${screenSizes.laptop}) {
     &:hover {
-      fill: ${props => props.theme.primary};
+      fill: ${(props) => props.theme.primary};
     }
   }
 `
