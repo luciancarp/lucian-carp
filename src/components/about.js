@@ -8,17 +8,18 @@ import Linkedin from '../assets/linkedin.svg'
 import { spaces, screenSizes } from '../styles/global'
 
 const About = () => {
-  const [arrow, setArrow] = useState(true)
+  const [arrow, setArrow] = useState(false)
+
+  const showArrow = () => {
+    if (window.innerWidth < 1024) {
+      setArrow(false)
+    } else {
+      setArrow(true)
+    }
+  }
 
   useEffect(() => {
-    const showArrow = () => {
-      if (window.innerWidth < 1024) {
-        setArrow(false)
-      } else {
-        setArrow(true)
-      }
-    }
-
+    showArrow()
     window.addEventListener('resize', showArrow)
     return () => window.removeEventListener('resize', showArrow)
   }, [arrow])
