@@ -2,10 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 
+import { fontSizes, spaces } from '../styles/global'
+
 const Stack = ({ stack }) => {
   return (
     <StyledStack>
-      {stack.map(item => {
+      {stack.map((item) => {
         return (
           <StyledItem>
             <StyledImg fixed={item.fixed} />
@@ -25,7 +27,8 @@ const StyledStack = styled.ul`
   flex-wrap: wrap;
   list-style-type: none;
 
-  margin-left: 0;
+  margin: 0;
+  margin-top: ${spaces.wide};
 `
 
 const StyledItem = styled.li`
@@ -34,13 +37,14 @@ const StyledItem = styled.li`
   align-items: center;
   justify-content: center;
 
-  max-width: 100px;
-  margin: 1rem;
+  max-width: 5.5rem;
+  margin: ${spaces.narrow};
 `
 
 const StyledItemTitle = styled.h5`
   margin-top: 0.5rem;
   text-align: center;
+  font-size: ${fontSizes.small};
 `
 
 const StyledImg = styled(Img)``

@@ -34,7 +34,7 @@ const Header = () => (
             offset={-100}
             duration={500}
           >
-            <h2>Work</h2>
+            <h2>Projects</h2>
           </Link>
         </NavItem>
         <NavItem>

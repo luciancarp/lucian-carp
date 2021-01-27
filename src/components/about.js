@@ -95,10 +95,11 @@ const Links = styled.div`
   justify-content: flex-start;
 
   margin-top: ${spaces.wide};
+  padding-top: ${spaces.regular};
 `
 
 const Line = styled.p`
-  margin-bottom: 0.25rem;
+  margin-bottom: ${spaces.narrow};
 `
 
 const Container = styled.section`

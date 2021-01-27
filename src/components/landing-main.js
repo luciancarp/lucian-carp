@@ -6,7 +6,8 @@ const LandingMain = () => {
   return (
     <Container id={'main'}>
       <MainTitle>Lucian Carp</MainTitle>
-      <h2>Full stack developer</h2>
+      {/* <h2>Full stack developer</h2> */}
+      <h2>Junior Web Developer</h2>
     </Container>
   )
 }

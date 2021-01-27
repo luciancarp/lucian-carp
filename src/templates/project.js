@@ -8,7 +8,7 @@ import { Gallery } from '../components/gallery'
 import ArrowDrop from '../assets/arrow-drop.svg'
 import Stack from '../components/stack'
 import ProjectLinks from '../components/project-links'
-import Hr from '../components/hr'
+import Footer from '../components/footer'
 
 import { motion } from 'framer-motion'
 import { opacityVariants } from '../styles/variants'
@@ -92,9 +92,10 @@ const Project = (props) => {
                 options
               )}
             </Text>
-            <Hr />
+            {/* <Hr /> */}
             <Stack stack={props.data.contentfulProject.stack} />
           </ProjectContainer>
+          <Footer />
         </Align>
       </Content>
     </Container>
