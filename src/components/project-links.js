@@ -46,13 +46,15 @@ const SvgStyle = css`
   width: 35px;
 
   fill: ${(props) => props.theme.text};
-  transition: fill 0.2s;
-  -webkit-transition: fill 0.2s;
+  stroke: ${(props) => props.theme.text};
+  transition: fill 0.2s, stroke 0.2s;
+  -webkit-transition: fill 0.2s, stroke 0.2s;
   transition-timing-function: ease-out;
 
   @media (min-width: ${screenSizes.laptop}) {
     &:hover {
       fill: ${(props) => props.theme.primary};
+      stroke: ${(props) => props.theme.primary};
     }
   }
 `

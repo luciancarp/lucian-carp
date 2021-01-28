@@ -95,12 +95,15 @@ const StackTagsContainer = styled.div`
   flex-wrap: wrap;
 
   margin-top: ${spaces.narrow};
+  margin-right: -${spaces.narrow};
 `
 
 const StackTag = styled.i`
   color: ${(props) => props.theme.primary};
   font-size: ${fontSizes.small};
   margin-right: ${spaces.narrow};
+
+  line-height: 1.1rem;
 `
 
 const Spacer = styled.div`
