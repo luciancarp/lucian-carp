@@ -116,6 +116,9 @@ const StyledCategory = styled.h2`
 
 const Container = styled.section`
   margin-top: ${spaces.spacer};
+  @media (min-width: ${screenSizes.laptop}) {
+    margin-top: ${spaces.narrow};
+  }
 `
 
 const StyledLink = styled(Link)`

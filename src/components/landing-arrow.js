@@ -32,7 +32,7 @@ const LandingArrow = () => (
         to="work"
         spy={true}
         smooth={true}
-        offset={-70}
+        offset={-100}
         duration={500}
       >
         <StyledArrowDrop />
