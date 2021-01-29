@@ -15,10 +15,6 @@ const LandingMain = () => {
 const Container = styled.section`
   padding-top: 15vh;
   min-height: 35vh;
-
-  @media (min-width: 1200px) {
-    scroll-snap-align: start;
-  }
 `
 
 const MainTitle = styled.h1`

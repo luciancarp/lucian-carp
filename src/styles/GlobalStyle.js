@@ -15,8 +15,6 @@ const GlobalStyle = createGlobalStyle`
     transition: background-color 0.2s;
     -webkit-transition: background-color 0.2s;
     transition-timing-function: ease-out;
-
-    scroll-snap-type: y proximity;
   }
 
   h1,
