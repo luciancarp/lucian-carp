@@ -103,7 +103,7 @@ const StackTag = styled.i`
   font-size: ${fontSizes.small};
   margin-right: ${spaces.narrow};
 
-  line-height: 1.1rem;
+  line-height: 1.2rem;
 `
 
 const Spacer = styled.div`

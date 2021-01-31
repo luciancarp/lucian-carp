@@ -15,7 +15,7 @@ const Contact = () => {
 }
 
 const Container = styled.section`
-  margin-top: ${spaces.spacer};
+  margin-top: 8rem;
 
   h2 {
     margin-bottom: ${spaces.wide};

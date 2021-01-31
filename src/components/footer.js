@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { fontSizes } from '../styles/global'
+import { fontSizes, spaces } from '../styles/global'
 
 const Footer = () => {
   return (
@@ -18,6 +18,7 @@ const Center = styled.div`
 const Container = styled.footer`
   min-height: 5rem;
   max-width: 600px;
+  margin-top: ${spaces.spacer};
 
   display: flex;
   flex-direction: row;
