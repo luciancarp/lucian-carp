@@ -39,7 +39,7 @@ export const Gallery = ({ images }) => {
     <>
       <StyledAnimatePresence initial={false} custom={direction}>
         <AnimatedContainer
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.025 }}
           key={page}
           custom={direction}
           variants={variants}

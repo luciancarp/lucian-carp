@@ -12,7 +12,7 @@ import Footer from '../components/footer'
 
 import { motion } from 'framer-motion'
 import { opacityVariants } from '../styles/variants'
-import { spaces, fontSizes } from '../styles/global'
+import { spaces } from '../styles/global'
 
 // GatsbyContentfulFluid not working in graphiql or playground
 export const query = graphql`
@@ -103,12 +103,35 @@ const Project = (props) => {
 }
 
 const TitleLine = styled.div`
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  padding-top: ${spaces.narrow};
+  padding-bottom: ${spaces.narrow};
+  padding-left: ${spaces.regular};
+  padding-right: ${spaces.regular};
+
+  margin-left: -${spaces.regular};
+  margin-right: -${spaces.regular};
+  margin-bottom: ${spaces.wide};
+
+  transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s;
+  transition-timing-function: ease-out;
+
+  background-color: ${(props) => props.theme.background};
+
+  @supports (backdrop-filter: none) {
+    background-color: ${(props) => props.theme.backgroundTransp};
+    backdrop-filter: blur(5px);
+  }
+
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
-  margin-bottom: ${spaces.wide};
 `
 
 const Align = styled.div`
@@ -153,18 +176,21 @@ const Title = styled.div`
   justify-content: center;
   align-items: center;
 
+  color: ${(props) => props.theme.primary};
+
   h1 {
     margin: 0;
 
-    font-size: ${fontSizes.large};
-    line-height: 2rem;
+    font-size: 1.4rem;
+    line-height: 2.5rem;
 
     @media (max-width: ${screenSizes.mobileL}) {
-      font-size: ${fontSizes.regular};
-      line-height: 1.75rem;
+      font-size: 1rem;
+      line-height: 2rem;
     }
+
     @media (max-width: ${screenSizes.mobileM}) {
-      font-size: ${fontSizes.small};
+      font-size: 0.85rem;
       line-height: 1.5rem;
     }
 
