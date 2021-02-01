@@ -25,7 +25,7 @@ export const query = graphql`
         json
       }
       images {
-        fluid(maxWidth: 600, quality: 100) {
+        fluid(maxWidth: 800, quality: 90) {
           ...GatsbyContentfulFluid_withWebp
         }
         file {
@@ -157,9 +157,18 @@ const Title = styled.div`
     margin: 0;
 
     font-size: ${fontSizes.large};
+    line-height: 2rem;
+
+    @media (max-width: ${screenSizes.mobileL}) {
+      font-size: ${fontSizes.regular};
+      line-height: 1.75rem;
+    }
+    @media (max-width: ${screenSizes.mobileM}) {
+      font-size: ${fontSizes.small};
+      line-height: 1.5rem;
+    }
 
     border-bottom: 0.1rem solid ${(props) => props.theme.text};
-    line-height: 2rem;
   }
 `
 

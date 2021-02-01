@@ -117,13 +117,19 @@ const NavItem = styled.li`
     margin-right: 1rem;
     display: inline-block;
 
-    font-size: 1rem;
     border-bottom: 0.15rem solid ${(props) => props.theme.text};
-    line-height: 2rem;
 
-    @media (min-width: ${screenSizes.mobileL}) {
-      font-size: 1.4rem;
-      line-height: 2.5rem;
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+
+    @media (max-width: ${screenSizes.mobileL}) {
+      font-size: 1rem;
+      line-height: 2rem;
+    }
+
+    @media (max-width: ${screenSizes.mobileM}) {
+      font-size: 0.85rem;
+      line-height: 1.5rem;
     }
   }
 `
