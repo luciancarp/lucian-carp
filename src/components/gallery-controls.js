@@ -9,8 +9,8 @@ const GalleryControls = ({ images, paginate, imageIndex }) => {
       <ButtonLeft onClick={() => paginate(-1)}>
         <StyledArrow />
       </ButtonLeft>
-      {images.map(image => {
-        let index = images.findIndex(i => i.file.url === image.file.url)
+      {images.map((image) => {
+        let index = images.findIndex((i) => i.file.url === image.file.url)
         return <Bullet displayed={imageIndex === index}>•</Bullet>
       })}
       <ButtonRight onClick={() => paginate(1)}>
@@ -52,20 +52,20 @@ const StyledArrow = styled(Arrow)`
 
 const Button = styled.div`
   cursor: pointer;
-  z-index: 2;
+  /* z-index: 2; */
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  fill: ${props => props.theme.text};
+  fill: ${(props) => props.theme.text};
   transition: fill 0.2s;
   -webkit-transition: fill 0.2s;
   transition-timing-function: ease-out;
 
   @media (min-width: ${screenSizes.laptop}) {
     &:hover {
-      fill: ${props => props.theme.primary};
+      fill: ${(props) => props.theme.primary};
     }
   }
 `
@@ -79,7 +79,8 @@ const Bullet = styled.div`
   transition: color 0.2s;
   -webkit-transition: color 0.2s;
   transition-timing-function: ease-out;
-  color: ${props => (props.displayed ? props.theme.primary : props.theme.text)};
+  color: ${(props) =>
+    props.displayed ? props.theme.primary : props.theme.text};
 `
 
 export default GalleryControls

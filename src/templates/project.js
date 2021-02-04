@@ -176,25 +176,25 @@ const Title = styled.div`
   justify-content: center;
   align-items: center;
 
-  color: ${(props) => props.theme.primary};
+  /* color: ${(props) => props.theme.primary}; */
 
   h1 {
     margin: 0;
 
     font-size: 1.4rem;
-    line-height: 2.5rem;
+    /* line-height: 2.5rem; */
 
     @media (max-width: ${screenSizes.mobileL}) {
       font-size: 1rem;
-      line-height: 2rem;
+      /* line-height: 2rem; */
     }
 
     @media (max-width: ${screenSizes.mobileM}) {
       font-size: 0.85rem;
-      line-height: 1.5rem;
+      /* line-height: 1.5rem; */
     }
 
-    border-bottom: 0.1rem solid ${(props) => props.theme.text};
+    /* border-bottom: 0.1rem solid ${(props) => props.theme.text}; */
   }
 `
 

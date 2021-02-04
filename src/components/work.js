@@ -112,6 +112,10 @@ const Spacer = styled.div`
 
 const StyledCategory = styled.h2`
   margin-bottom: ${spaces.narrow};
+
+  display: inline-block;
+  border-bottom: 0.1rem solid ${(props) => props.theme.text};
+  line-height: 2.5rem;
 `
 
 const Container = styled.section`
@@ -202,9 +206,10 @@ const WorkItem = styled.li`
     -webkit-transition: color 0.3s;
     transition-timing-function: ease-out;
 
-    display: inline-block;
-    border-bottom: 0.1rem solid ${(props) => props.theme.text};
-    line-height: 1.5rem;
+    /* display: inline-block;
+    border-bottom: 0.1rem solid ${(props) =>
+      props.theme.text};
+    line-height: 1.5rem; */
 
     font-size: ${fontSizes.regular};
 
