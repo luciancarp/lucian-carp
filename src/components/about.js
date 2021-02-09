@@ -39,7 +39,7 @@ const About = () => {
           <ExternalLink
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.linkedin.com/in/lucian-carp-503840170/"
+            href="https://www.linkedin.com/in/lucian-carp/"
           >
             <StyledLinkedin />
           </ExternalLink>
