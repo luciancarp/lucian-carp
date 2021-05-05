@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { graphql } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { screenSizes } from '../styles/global'
 import SEO from '../components/seo'
@@ -61,6 +61,13 @@ const Project = (props) => {
     }
   }
 
+  const goBack = () => {
+    if (props.location.state !== null) {
+      if (props.location.state.referrer === '/') navigate(-1)
+      else navigate('/')
+    } else navigate('/')
+  }
+
   return (
     <Container
       initial="hidden"
@@ -74,7 +81,7 @@ const Project = (props) => {
           <ProjectContainer>
             <TitleLine>
               <Title>
-                <LeftButton onClick={() => window.history.back()}>
+                <LeftButton onClick={() => goBack()}>
                   <StyledArrowDrop />
                 </LeftButton>
                 <h1>{props.data.contentfulProject.title}</h1>
