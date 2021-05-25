@@ -53,7 +53,7 @@ const About = () => {
           <ExternalLink
             target="_blank"
             rel="noopener noreferrer"
-            href="https://assets.ctfassets.net/9xmdi7tzsga7/4bt4ADkjC1sRlpSg4q3g0O/e0558f46f6ad7bd9863536a1c3946610/lucian-carp.pdf"
+            href="https://assets.ctfassets.net/9xmdi7tzsga7/4bt4ADkjC1sRlpSg4q3g0O/c550d40e369fa0f51434e8b7b7c7e0a9/lucian-carp.pdf"
           >
             <h3>CV</h3>
           </ExternalLink>
