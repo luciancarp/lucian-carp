@@ -24,8 +24,11 @@ const Layout = ({ children }) => {
       >
         <Align>
           <LandingMain />
-          <Header />
-          <Content>{children}</Content>
+          {/* <Header /> */}
+          {/* <Content>{children}</Content> */}
+          <Content>
+            <h1>Work in progress.</h1>
+          </Content>
           <Footer />
         </Align>
       </Container>
@@ -35,6 +38,9 @@ const Layout = ({ children }) => {
 const Align = styled.div`
   display: flex;
   flex-direction: column;
+
+  // temp
+  flex-grow: 1;
 `
 
 const Container = styled(motion.div)`
@@ -46,8 +52,8 @@ const Container = styled(motion.div)`
 
   display: flex;
   flex-direction: column;
-
   align-items: center;
+
   @media (min-width: 1200px) {
     align-items: flex-start;
   }
